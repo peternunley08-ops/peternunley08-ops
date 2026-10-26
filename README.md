@@ -2,7 +2,7 @@
 
 I build calm, practical software for real-world operations, students, and local communities — ranging from native iOS apps and multi-device sync engines to serverless e-commerce pipelines and interactive dashboards.
 
-[![Portfolio Website](https://img.shields.io/badge/🌐_Live_Portfolio-peternunley08--ops.github.io-2DD4BF?style=for-the-badge)](https://peternunley08-ops.github.io)
+[![Portfolio Website](https://img.shields.io/badge/🌐_Live_Portfolio-peternunley08--ops.github.io-2DD4BF?style=for-the-badge)](https://peternunley08-ops.github.io/peternunley08-ops/)
 [![GitHub](https://img.shields.io/badge/GitHub-peternunley08--ops-181717?style=for-the-badge&logo=github)](https://github.com/peternunley08-ops)
 
 ---
@@ -33,10 +33,10 @@ A real-time roster, attendance, instructor assignment, and rotation platform bui
 > **Stack:** HTML5 / CSS3 / Vanilla JS · Leaflet.js · Google Apps Script · Gemini Vision API
 
 A collection of zero-dependency web applications, interactive dashboards, and serverless automations:
-- **[🍩 Donut Dash](./web-builds-and-dashboards/donut-dash):** Official event site and registration portal for a student-led community run benefiting the **SLO Food Bank** in San Luis Obispo, CA — featuring an interactive **Leaflet.js** course map, dynamic age-tier fee calculation, and dark/light theme tokens.
-- **[🐾 Northstar Paws](./web-builds-and-dashboards/northstar-paws):** Custom pet-portrait storefront backed by a 24/7 **Google Apps Script + Gemini Vision** pipeline that saves uploaded pet photos to Google Drive, logs orders to Sheets, and automatically drafts an AI portrait proof emailed upon checkout.
-- **[💳 Money Dashboard](./web-builds-and-dashboards/money-dashboard):** Privacy-first, 100% client-side financial review tool that parses Chase & PayPal CSV exports, auto-categorizes transactions via rule matching, and renders SVG spending donuts and monthly budget progress bars.
-- **[🎛️ Command Center UI](./web-builds-and-dashboards/command-center-ui):** High-contrast dark-mode operations cockpit for tracking multi-project launch readiness, daily priorities, and revenue metrics.
+- **[🍩 Donut Dash](https://github.com/peternunley08-ops/web-builds-and-dashboards/tree/main/donut-dash) ([Live Preview](https://peternunley08-ops.github.io/web-builds-and-dashboards/donut-dash/)):** Official event site and registration portal for a student-led community run benefiting the **SLO Food Bank** in San Luis Obispo, CA — featuring an interactive **Leaflet.js** course map, dynamic age-tier fee calculation, and dark/light theme tokens.
+- **[🐾 Northstar Paws](https://github.com/peternunley08-ops/web-builds-and-dashboards/tree/main/northstar-paws) ([Live Preview](https://peternunley08-ops.github.io/web-builds-and-dashboards/northstar-paws/)):** Custom pet-portrait storefront backed by a 24/7 **Google Apps Script + Gemini Vision** pipeline that saves uploaded pet photos to Google Drive, logs orders to Sheets, and automatically drafts an AI portrait proof emailed upon checkout.
+- **[💳 Money Dashboard](https://github.com/peternunley08-ops/web-builds-and-dashboards/tree/main/money-dashboard) ([Live Preview](https://peternunley08-ops.github.io/web-builds-and-dashboards/money-dashboard/)):** Privacy-first, 100% client-side financial review tool that parses Chase & PayPal CSV exports, auto-categorizes transactions via rule matching, and renders SVG spending donuts and monthly budget progress bars.
+- **[🎛️ Command Center UI](https://github.com/peternunley08-ops/web-builds-and-dashboards/tree/main/command-center-ui) ([Live Preview](https://peternunley08-ops.github.io/web-builds-and-dashboards/command-center-ui/)):** High-contrast dark-mode operations cockpit for tracking multi-project launch readiness, daily priorities, and revenue metrics.
 
 ---
 
