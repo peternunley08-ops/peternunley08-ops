@@ -10,6 +10,7 @@ I build calm, practical software for real-world operations, students, and local 
 ## 🚀 Featured Projects
 
 ### 1. [🕯️ Brain Navigator](https://github.com/peternunley08-ops/brain-navigator) — *iOS Student Companion App*
+[![CI](https://github.com/peternunley08-ops/brain-navigator/actions/workflows/ci.yml/badge.svg)](https://github.com/peternunley08-ops/brain-navigator/actions/workflows/ci.yml) [![Tests](https://img.shields.io/badge/tests-133_passed-f59e0b)](https://github.com/peternunley08-ops/brain-navigator/tree/main/tests)
 > **Stack:** React Native 0.86 · Expo SDK 57 · TypeScript · Zustand · Reanimated 4 · Supabase Edge Functions · Swift Widgets
 
 A quiet, local-first iPhone app designed for high school students to keep classes, assignments, focus sessions, and mental clutter from piling up.
@@ -20,6 +21,7 @@ A quiet, local-first iPhone app designed for high school students to keep classe
 ---
 
 ### 2. [🏊‍♂️ DeckHand — Swim Roster & Lifeguard Sync](https://github.com/peternunley08-ops/swim-roster-ops) — *Multi-Device Aquatics Operations*
+[![CI](https://github.com/peternunley08-ops/swim-roster-ops/actions/workflows/ci.yml/badge.svg)](https://github.com/peternunley08-ops/swim-roster-ops/actions/workflows/ci.yml) [![Tests](https://img.shields.io/badge/tests-13_passed-2DD4BF)](https://github.com/peternunley08-ops/swim-roster-ops/blob/main/src/sync.test.mjs) [![Live Demo](https://img.shields.io/badge/demo-live_product_page-E8A23C)](https://peternunley08-ops.github.io/swim-roster-ops/docs/swim-ops-landing.html)
 > **Stack:** React 18 · Vite · Netlify Functions & Blobs · Supabase (RLS + Edge Functions) · Claude Vision API
 
 A real-time roster, attendance, instructor assignment, and rotation platform built for summer swim programs and lifeguard decks.
