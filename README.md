@@ -14,6 +14,9 @@ I build calm, practical software for real-world operations, students, and local 
 > **Stack:** React Native 0.86 · Expo SDK 57 · TypeScript · Zustand · Reanimated 4 · Supabase Edge Functions · Swift Widgets
 
 A quiet, local-first iPhone app designed for high school students to keep classes, assignments, focus sessions, and mental clutter from piling up.
+
+<table><tr><td align="center"><img src="assets/screens/1-desk.jpg" width="145" alt="Desk"><br><sub><b>Desk:</b> Know what’s next.</sub></td><td align="center"><img src="assets/screens/2-school.jpg" width="145" alt="School"><br><sub><b>School:</b> Tonight, at a glance.</sub></td><td align="center"><img src="assets/screens/3-focus.jpg" width="145" alt="Focus"><br><sub><b>Focus:</b> One candle. One thing.</sub></td><td align="center"><img src="assets/screens/4-mind.jpg" width="145" alt="Mind"><br><sub><b>Mind:</b> Set it down.</sub></td><td align="center"><img src="assets/screens/5-steady.jpg" width="145" alt="Steady"><br><sub><b>Steady:</b> Help, always in reach.</sub></td></tr></table>
+
 - **No streaks or guilt:** Accompanied by **Ember**, an ambient candlelit companion that adapts to time of day (*First Light* in the morning, *Night Room* after hours).
 - **Full-featured academic workflow:** Assignment & exam tracking, customizable Pomodoro focus timer with procedural audio, sleep/worry check-ins, and a sample student "Show Mode" (*Riley*) for safe live demos.
 - **Engineered with rigor:** Built across 7 iterative rounds with automated quality gates, static analysis, and zero third-party tracking.

@@ -21,15 +21,15 @@
       --accent: #2dd4bf;
       --accent-warm: #f59e0b;
       --accent-purple: #a78bfa;
-      --max: 1120px;
+      --max: 1160px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background:
-        radial-gradient(900px 500px at 15% -10%, rgba(45, 212, 191, 0.11), transparent 60%),
-        radial-gradient(850px 520px at 90% 5%, rgba(245, 158, 11, 0.09), transparent 60%),
+        radial-gradient(900px 500px at 15% -10%, rgba(45, 212, 191, 0.12), transparent 60%),
+        radial-gradient(850px 520px at 90% 5%, rgba(245, 158, 11, 0.10), transparent 60%),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -42,7 +42,7 @@
     header.nav {
       position: sticky; top: 0; z-index: 30;
       backdrop-filter: blur(14px);
-      background: rgba(11, 15, 23, 0.78);
+      background: rgba(11, 15, 23, 0.82);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
@@ -61,6 +61,8 @@
     }
     .nav-links { display: flex; align-items: center; gap: 24px; font-size: 14px; color: var(--muted); }
     .nav-links a:hover { color: var(--text); }
+    @media (max-width: 640px) { .nav-links a:not(.btn) { display: none; } }
+
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 10px 18px; border-radius: 10px; font-weight: 600; font-size: 14px;
@@ -75,7 +77,7 @@
     .btn.primary:hover { filter: brightness(1.06); }
 
     /* Hero */
-    .hero { padding: 84px 0 56px; }
+    .hero { padding: 78px 0 48px; }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       font-family: 'JetBrains Mono', monospace; font-size: 12px;
@@ -85,18 +87,18 @@
     }
     h1 {
       font-family: 'Fraunces', serif;
-      font-size: clamp(36px, 5.5vw, 60px);
+      font-size: clamp(34px, 5.2vw, 58px);
       line-height: 1.08; letter-spacing: -0.02em;
-      max-width: 820px; margin-bottom: 20px;
+      max-width: 840px; margin-bottom: 18px;
     }
     .hero p.lead {
-      font-size: clamp(17px, 2vw, 20px);
-      color: var(--muted); max-width: 680px; margin-bottom: 30px;
+      font-size: clamp(16.5px, 2vw, 19.5px);
+      color: var(--muted); max-width: 680px; margin-bottom: 28px;
     }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 
     /* Section headers */
-    section { padding: 48px 0; }
+    section { padding: 44px 0; }
     .sec-head {
       display: flex; justify-content: space-between; align-items: flex-end;
       flex-wrap: wrap; gap: 16px; margin-bottom: 28px;
@@ -108,17 +110,24 @@
     .sec-head p { color: var(--muted); font-size: 15px; max-width: 560px; }
 
     /* Flagship Cards */
-    .flagship-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .flagship-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
     .flagship {
       background: linear-gradient(180deg, var(--card), var(--bg-elev));
       border: 1px solid var(--border);
-      border-radius: 20px; padding: 32px;
-      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px;
-      align-items: center; transition: border-color 0.2s ease, transform 0.2s ease;
+      border-radius: 22px; padding: 34px;
+      transition: border-color 0.2s ease;
     }
-    .flagship:hover { border-color: var(--border-strong); transform: translateY(-2px); }
-    @media (max-width: 860px) { .flagship { grid-template-columns: 1fr; padding: 24px; } }
-    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .flagship:hover { border-color: var(--border-strong); }
+    .flagship-top {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 32px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .flagship { padding: 24px; }
+      .flagship-top { grid-template-columns: 1fr; }
+    }
+
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; align-items: center; }
     .tag {
       font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
       padding: 4px 10px; border-radius: 6px;
@@ -127,12 +136,51 @@
     }
     .tag.warm { color: #fbbf24; background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.3); }
     .tag.teal { color: var(--accent); background: rgba(45, 212, 191, 0.12); border-color: rgba(45, 212, 191, 0.3); }
+    .tag.pass { color: #34d399; background: rgba(16, 185, 129, 0.14); border-color: rgba(16, 185, 129, 0.35); font-weight: 600; }
+
     .flagship h3 { font-family: 'Fraunces', serif; font-size: 28px; margin-bottom: 10px; }
     .flagship p { color: var(--muted); font-size: 15.5px; margin-bottom: 16px; }
     .bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
     .bullets li { font-size: 14.5px; color: #cbd5e1; display: flex; gap: 10px; align-items: flex-start; }
     .bullets li::before { content: "→"; color: var(--accent); font-weight: 700; }
     .card-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* iPhone Screenshot Strip */
+    .screens-strip {
+      margin-top: 28px; padding-top: 26px;
+      border-top: 1px solid var(--border);
+    }
+    .screens-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+      margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .phones-row {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+    }
+    @media (max-width: 820px) {
+      .phones-row { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .phones-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    .phone-shot {
+      background: #080b11; border: 1px solid var(--border-strong);
+      border-radius: 18px; padding: 8px 8px 10px;
+      text-align: center; cursor: zoom-in;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .phone-shot:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-warm);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+    }
+    .phone-shot img {
+      width: 100%; height: auto; border-radius: 12px; display: block;
+    }
+    .phone-shot span {
+      display: block; font-size: 12px; color: var(--muted); margin-top: 8px; font-weight: 500;
+    }
 
     /* Visual preview box inside flagship */
     .preview-box {
@@ -141,27 +189,77 @@
       font-family: 'JetBrains Mono', monospace; font-size: 12.5px;
       color: #cbd5e1; box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
     }
-    .preview-box .win-dots { display: flex; gap: 6px; margin-bottom: 14px; }
+    .preview-box .win-dots { display: flex; gap: 6px; margin-bottom: 14px; align-items: center; }
     .preview-box .dot { width: 10px; height: 10px; border-radius: 50%; background: #334155; }
     .preview-box .dot.r { background: #ef4444; }
     .preview-box .dot.y { background: #f59e0b; }
     .preview-box .dot.g { background: #10b981; }
+    .preview-box .win-title { margin-left: 8px; font-size: 11px; color: var(--muted); }
     .preview-box pre { white-space: pre-wrap; line-height: 1.55; color: #94a3b8; }
     .preview-box pre b { color: var(--text); }
     .preview-box pre .hl { color: var(--accent); }
     .preview-box pre .wm { color: #fbbf24; }
 
+    /* DeckHand visual mock inside flagship 2 */
+    .deckhand-mock {
+      background: linear-gradient(160deg, #0b3c5d, #0f202e);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      border-radius: 18px; padding: 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+    .dh-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .dh-title { font-weight: 700; font-size: 14px; color: #e2f8f5; }
+    .dh-sync { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #34d399; background: rgba(16,185,129,0.15); padding: 3px 8px; border-radius: 99px; }
+    .dh-card {
+      background: rgba(255,255,255,0.95); color: #0f172a;
+      border-radius: 11px; padding: 10px 12px; margin-bottom: 8px;
+      border-left: 4px solid #2dd4bf; font-size: 12.5px;
+    }
+    .dh-card.l2 { border-left-color: #7c5cff; }
+    .dh-row { display: flex; justify-content: space-between; font-weight: 700; }
+    .dh-sub { font-size: 11.5px; color: #475569; margin-top: 2px; }
+
     /* Grid for Web Builds & Dashboards */
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
     @media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
     .project-card {
       background: var(--card); border: 1px solid var(--border);
-      border-radius: 18px; padding: 26px; display: flex; flex-direction: column;
+      border-radius: 18px; overflow: hidden; display: flex; flex-direction: column;
       transition: border-color 0.2s ease, transform 0.2s ease;
     }
-    .project-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+    .project-card:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+    .card-thumb {
+      height: 175px; background: #0d131f; border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
+    }
+    .card-thumb img.cover {
+      width: 100%; height: 100%; object-fit: cover; object-position: top;
+      transition: transform 0.35s ease;
+    }
+    .project-card:hover .card-thumb img.cover { transform: scale(1.03); }
+    .paws-trio {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 14px; width: 100%; height: 100%;
+      background: radial-gradient(circle at 50% 0%, rgba(245,158,11,0.16), #0d131f 75%);
+    }
+    .paws-trio img {
+      width: 100%; height: 145px; object-fit: cover; border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
     .project-card h3 { font-family: 'Fraunces', serif; font-size: 22px; margin: 10px 0 8px; }
     .project-card p { color: var(--muted); font-size: 14.5px; margin-bottom: 20px; flex: 1; }
+
+    /* Lightbox modal */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(5, 8, 14, 0.88); backdrop-filter: blur(10px);
+      display: none; place-items: center; padding: 24px; cursor: zoom-out;
+    }
+    .lightbox.open { display: grid; }
+    .lightbox img {
+      max-height: 86vh; max-width: 92vw; border-radius: 20px;
+      border: 1px solid var(--border-strong); box-shadow: 0 25px 70px rgba(0,0,0,0.7);
+    }
 
     footer {
       border-top: 1px solid var(--border);
@@ -196,7 +294,7 @@
       </p>
       <div class="hero-actions">
         <a href="#flagships" class="btn primary">Explore Projects ↓</a>
-        <a href="https://github.com/peternunley08-ops" target="_blank" rel="noopener" class="btn">View on GitHub ↗</a>
+        <a href="https://github.com/peternunley08-ops" target="_blank" rel="noopener" class="btn">github.com/peternunley08-ops ↗</a>
       </div>
     </section>
 
@@ -204,81 +302,126 @@
       <div class="sec-head">
         <div>
           <h2>Flagship Applications</h2>
-          <p>Production mobile and multi-device web applications engineered from the ground up.</p>
+          <p>Production mobile and multi-device web applications with automated CI test suites.</p>
         </div>
       </div>
 
       <div class="flagship-grid">
         <!-- Brain Navigator -->
         <article class="flagship">
-          <div>
-            <div class="badge-row">
-              <span class="tag warm">iOS / Expo SDK 57</span>
-              <span class="tag">React Native 0.86</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Zustand</span>
-              <span class="tag">Supabase Edge Functions</span>
+          <div class="flagship-top">
+            <div>
+              <div class="badge-row">
+                <span class="tag pass">✓ CI Passing · 133 Unit Tests</span>
+                <span class="tag warm">iOS / Expo SDK 57</span>
+                <span class="tag">React Native 0.86</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Supabase Edge Functions</span>
+              </div>
+              <h3>🕯️ Brain Navigator</h3>
+              <p>
+                A quiet, candlelit iPhone app designed for high school students to keep classes, assignments, focus sessions, and mental clutter from piling up — without streaks, guilt, or scoreboards.
+              </p>
+              <ul class="bullets">
+                <li><b>Time-aware "Candlelight" UI:</b> Transitions from <i>First Light</i> morning briefings on the Desk tab to a calm <i>Night Room</i> stack after hours.</li>
+                <li><b>Local-first &amp; privacy-guarded:</b> Schoolwork stays on-device in JSON stores; includes a synthetic "Show Mode" (sample student <i>Riley</i>) for safe live demos.</li>
+                <li><b>Engineered with rigor:</b> 133 automated unit tests across 38 suites verifying GPA math, schedule parsing, crisis redaction, and night-clock rollover.</li>
+              </ul>
+              <div class="card-actions">
+                <a href="https://github.com/peternunley08-ops/brain-navigator" target="_blank" rel="noopener" class="btn primary">View Code &amp; Docs on GitHub ↗</a>
+                <a href="https://github.com/peternunley08-ops/brain-navigator/actions" target="_blank" rel="noopener" class="btn">View 133 Passing Tests ↗</a>
+              </div>
             </div>
-            <h3>🕯️ Brain Navigator</h3>
-            <p>
-              A quiet, candlelit iPhone app designed for high school students to keep classes, assignments, focus sessions, and mental clutter from piling up — without streaks, guilt, or scoreboards.
-            </p>
-            <ul class="bullets">
-              <li><b>Time-aware "Candlelight" UI:</b> Transitions from <i>First Light</i> morning briefings on the Desk tab to a calm <i>Night Room</i> stack after hours.</li>
-              <li><b>Local-first &amp; privacy-guarded:</b> Schoolwork stays on-device in JSON stores; includes a synthetic "Show Mode" (sample student <i>Riley</i>) for safe live demos.</li>
-              <li><b>Iterative multi-agent engineering:</b> Built across 7 documented rounds with automated static checks, security scans, and native iOS widgets.</li>
-            </ul>
-            <div class="card-actions">
-              <a href="https://github.com/peternunley08-ops/brain-navigator" target="_blank" rel="noopener" class="btn primary">View Repository ↗</a>
-            </div>
-          </div>
-          <div class="preview-box">
-            <div class="win-dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
-            <pre><b>brain-navigator/</b>
+            <div class="preview-box">
+              <div class="win-dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="win-title">brain-navigator — architecture</span></div>
+              <pre><b>brain-navigator/</b>
 ├── <span class="wm">app/</span>          Expo Router screens (Desk, School, Focus, Steady)
 ├── <span class="wm">components/</span>   Candlelight UI kit &amp; Ember companion
 ├── <span class="wm">core/</span>         Zustand stores, night clock, house rules
 ├── <span class="wm">widgets/</span>      Native iOS Home Screen widgets
 ├── <span class="wm">supabase/</span>     Edge Functions (ember, notion)
+├── <span class="wm">tests/</span>        133 unit tests across 38 suites
 └── <span class="wm">tools/hub/</span>    Automated quality &amp; privacy gate</pre>
+            </div>
+          </div>
+
+          <!-- 5 iPhone Screenshots Strip -->
+          <div class="screens-strip">
+            <div class="screens-label">
+              <span>📱 iOS App Screens (Click any screen to enlarge)</span>
+              <span>Candlelight Design System</span>
+            </div>
+            <div class="phones-row">
+              <div class="phone-shot" onclick="openLightbox('assets/screens/1-desk.jpg')">
+                <img src="assets/screens/1-desk.jpg" alt="Desk screen — Know what's next" loading="lazy" />
+                <span>1 · Desk ("Know what's next")</span>
+              </div>
+              <div class="phone-shot" onclick="openLightbox('assets/screens/2-school.jpg')">
+                <img src="assets/screens/2-school.jpg" alt="School screen — Tonight at a glance" loading="lazy" />
+                <span>2 · School ("Tonight, at a glance")</span>
+              </div>
+              <div class="phone-shot" onclick="openLightbox('assets/screens/3-focus.jpg')">
+                <img src="assets/screens/3-focus.jpg" alt="Focus screen — One candle, one thing" loading="lazy" />
+                <span>3 · Focus ("One candle. One thing.")</span>
+              </div>
+              <div class="phone-shot" onclick="openLightbox('assets/screens/4-mind.jpg')">
+                <img src="assets/screens/4-mind.jpg" alt="Mind screen — Set it down" loading="lazy" />
+                <span>4 · Mind ("Set it down")</span>
+              </div>
+              <div class="phone-shot" onclick="openLightbox('assets/screens/5-steady.jpg')">
+                <img src="assets/screens/5-steady.jpg" alt="Steady screen — Help always in reach" loading="lazy" />
+                <span>5 · Steady ("Help, always in reach")</span>
+              </div>
+            </div>
           </div>
         </article>
 
         <!-- Swim Roster & Lifeguard Sync -->
         <article class="flagship">
-          <div>
-            <div class="badge-row">
-              <span class="tag teal">React 18 + Vite</span>
-              <span class="tag">3-Way ETag Sync</span>
-              <span class="tag">Claude Vision API</span>
-              <span class="tag">Supabase RLS</span>
-              <span class="tag">Netlify Blobs</span>
+          <div class="flagship-top">
+            <div>
+              <div class="badge-row">
+                <span class="tag pass">✓ CI Passing · 13 Sync Tests</span>
+                <span class="tag teal">React 18 + Vite</span>
+                <span class="tag">3-Way ETag Sync</span>
+                <span class="tag">Claude Vision API</span>
+                <span class="tag">Supabase RLS</span>
+              </div>
+              <h3>🏊‍♂️ DeckHand — Swim Roster &amp; Lifeguard Sync</h3>
+              <p>
+                A real-time operations app for summer swim lessons and lifeguard teams. Tracks swimmer attendance across time slots and levels, assigns instructors, and imports paper clipboards by photo.
+              </p>
+              <ul class="bullets">
+                <li><b>3-Way Optimistic Concurrency Merge:</b> Poolside instructors can mark attendance simultaneously from multiple phones without overwriting each other's changes.</li>
+                <li><b>Claude Vision Sheet Import:</b> Reads printed tables and handwritten roster adjustments from a phone camera into a structured review queue.</li>
+                <li><b>Hardened Security Architecture:</b> Supabase Row-Level Security (RLS) and Edge Functions enforce owner-only account creation and wipe local caches on logout.</li>
+              </ul>
+              <div class="card-actions">
+                <a href="../swim-roster-ops/docs/swim-ops-landing.html" class="btn primary">Launch Product Page →</a>
+                <a href="../swim-roster-ops/docs/swim-system-map.html" class="btn">Interactive System Map →</a>
+                <a href="https://github.com/peternunley08-ops/swim-roster-ops" target="_blank" rel="noopener" class="btn">GitHub Repo ↗</a>
+              </div>
             </div>
-            <h3>🏊‍♂️ DeckHand — Swim Roster &amp; Lifeguard Sync</h3>
-            <p>
-              A real-time operations app for summer swim lessons and lifeguard teams. Tracks swimmer attendance across time slots and levels, assigns instructors, and imports paper clipboards by photo.
-            </p>
-            <ul class="bullets">
-              <li><b>3-Way Optimistic Concurrency Merge:</b> Poolside instructors can mark attendance simultaneously from multiple phones without overwriting each other's changes.</li>
-              <li><b>Claude Vision Sheet Import:</b> Reads printed tables and handwritten roster adjustments from a phone camera into a structured review queue.</li>
-              <li><b>Hardened Security Architecture:</b> Supabase Row-Level Security (RLS) and Edge Functions enforce owner-only account creation and wipe local caches on logout.</li>
-            </ul>
-            <div class="card-actions">
-              <a href="../swim-roster-ops/docs/swim-ops-landing.html" class="btn primary">Live Product Page →</a>
-              <a href="../swim-roster-ops/docs/swim-system-map.html" class="btn">Interactive System Map →</a>
-              <a href="https://github.com/peternunley08-ops/swim-roster-ops" target="_blank" rel="noopener" class="btn">GitHub Repo ↗</a>
+
+            <div class="deckhand-mock">
+              <div class="dh-head">
+                <span class="dh-title">🏊‍♂️ DeckHand · 10:00 AM Slot</span>
+                <span class="dh-sync">● Synced (ETag 3-Way Merge)</span>
+              </div>
+              <div class="dh-card">
+                <div class="dh-row"><span>Level 3 · Stroke Readiness</span><span>6 / 6 Present</span></div>
+                <div class="dh-sub">Instructors: Jordan, Taylor, Casey · All checked in</div>
+              </div>
+              <div class="dh-card l2">
+                <div class="dh-row"><span>Level 2 · Water Stamina</span><span>4 / 6 Present</span></div>
+                <div class="dh-sub">Instructor: Morgan · + Photo OCR Import Ready</div>
+              </div>
+              <div class="preview-box" style="margin-top: 10px; padding: 14px;">
+                <pre><span class="hl">mergeState(base, localPhoneA, serverPhoneB)</span>
+✓ Non-overlapping field edits auto-reconcile
+✓ HTTP 409 ETag conflict retry verified</pre>
+              </div>
             </div>
-          </div>
-          <div class="preview-box">
-            <div class="win-dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
-            <pre><b>Multi-Device Sync Flow (src/sync.js)</b>
-Phone A &amp; Phone B edit 10am roster concurrently
-       │
-       ▼
-<span class="hl">mergeState(baseSnapshot, localEdits, serverLatest)</span>
-  • Reconciles per-student field diffs (present, level, note)
-  • Guards writes with HTTP ETag (409 auto-retry)
-  • Verified by automated test suite (<span class="wm">sync.test.mjs</span>)</pre>
           </div>
         </article>
       </div>
@@ -288,82 +431,137 @@ Phone A &amp; Phone B edit 10am roster concurrently
       <div class="sec-head">
         <div>
           <h2>Web Builds, Automations &amp; Dashboards</h2>
-          <p>Self-contained web apps, community event sites, and serverless workflows — click any project to open its live interactive view.</p>
+          <p>Self-contained web apps, community event sites, and serverless workflows — click any project to launch its live interactive view.</p>
         </div>
       </div>
 
       <div class="grid-2">
         <!-- Donut Dash -->
         <article class="project-card">
-          <div class="badge-row">
-            <span class="tag warm">Community Fundraiser</span>
-            <span class="tag">Leaflet.js Map</span>
-            <span class="tag">CSS Tokens</span>
+          <div class="card-thumb">
+            <img class="cover" src="../web-builds-and-dashboards/donut-dash/course-map.jpg" alt="Donut Dash Course Map" loading="lazy" />
           </div>
-          <h3>🍩 Donut Dash — SLO Food Bank 5K</h3>
-          <p>
-            Event website and registration portal for a student-led community run in San Luis Obispo, CA. Includes an interactive Leaflet.js route map, dynamic age-tier pricing, and dark/light theme support.
-          </p>
-          <div class="card-actions">
-            <a href="../web-builds-and-dashboards/donut-dash/index.html" class="btn primary">Launch Interactive Site →</a>
+          <div class="card-body">
+            <div class="badge-row">
+              <span class="tag warm">Community Fundraiser</span>
+              <span class="tag">Leaflet.js Map</span>
+              <span class="tag">CSS Tokens</span>
+            </div>
+            <h3>🍩 Donut Dash — SLO Food Bank 5K</h3>
+            <p>
+              Event website and registration portal for a student-led community run in San Luis Obispo, CA. Features an interactive Leaflet.js route map, dynamic age-tier pricing, and dark/light theme support.
+            </p>
+            <div class="card-actions">
+              <a href="../web-builds-and-dashboards/donut-dash/index.html" class="btn primary">Launch Interactive Site →</a>
+              <a href="https://github.com/peternunley08-ops/web-builds-and-dashboards/tree/main/donut-dash" target="_blank" rel="noopener" class="btn">Source ↗</a>
+            </div>
           </div>
         </article>
 
         <!-- Northstar Paws -->
         <article class="project-card">
-          <div class="badge-row">
-            <span class="tag teal">Serverless Commerce</span>
-            <span class="tag">Google Apps Script</span>
-            <span class="tag">Gemini Vision</span>
+          <div class="card-thumb">
+            <div class="paws-trio">
+              <img src="assets/sample-oil.jpg" alt="Oil portrait sample" loading="lazy" />
+              <img src="assets/sample-pop.jpg" alt="Pop art portrait sample" loading="lazy" />
+              <img src="assets/sample-flat.jpg" alt="Modern flat portrait sample" loading="lazy" />
+            </div>
           </div>
-          <h3>🐾 Northstar Paws — AI Portrait Pipeline</h3>
-          <p>
-            Custom pet-portrait storefront connected to a 24/7 Google Apps Script backend. Uploads pet photos to Drive, logs orders to Google Sheets, and automatically generates an AI portrait proof via Gemini.
-          </p>
-          <div class="card-actions">
-            <a href="../web-builds-and-dashboards/northstar-paws/index.html" class="btn primary">Launch Storefront →</a>
+          <div class="card-body">
+            <div class="badge-row">
+              <span class="tag teal">Serverless Commerce</span>
+              <span class="tag">Google Apps Script</span>
+              <span class="tag">Gemini Vision</span>
+            </div>
+            <h3>🐾 Northstar Paws — AI Portrait Pipeline</h3>
+            <p>
+              Custom pet-portrait storefront connected to a 24/7 Google Apps Script backend. Uploads pet photos to Drive, logs orders to Google Sheets, and automatically generates an AI portrait proof via Gemini.
+            </p>
+            <div class="card-actions">
+              <a href="../web-builds-and-dashboards/northstar-paws/index.html" class="btn primary">Launch Storefront →</a>
+              <a href="https://github.com/peternunley08-ops/web-builds-and-dashboards/tree/main/northstar-paws" target="_blank" rel="noopener" class="btn">Source ↗</a>
+            </div>
           </div>
         </article>
 
         <!-- Money Dashboard -->
         <article class="project-card">
-          <div class="badge-row">
-            <span class="tag teal">100% Client-Side</span>
-            <span class="tag">CSV Parser</span>
-            <span class="tag">SVG Visualization</span>
+          <div class="card-thumb" style="background: linear-gradient(135deg, #0d1b2a, #132a42); padding: 20px;">
+            <div style="display:flex; align-items:center; gap:20px; width:100%; max-width:380px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); padding:16px 20px; border-radius:14px;">
+              <svg width="74" height="74" viewBox="0 0 42 42">
+                <circle cx="21" cy="21" r="15.9" fill="none" stroke="#1f9d57" stroke-width="5" stroke-dasharray="45 55" stroke-dashoffset="25"></circle>
+                <circle cx="21" cy="21" r="15.9" fill="none" stroke="#117ac9" stroke-width="5" stroke-dasharray="30 70" stroke-dashoffset="-20"></circle>
+                <circle cx="21" cy="21" r="15.9" fill="none" stroke="#e0922f" stroke-width="5" stroke-dasharray="25 75" stroke-dashoffset="-50"></circle>
+              </svg>
+              <div style="font-size:12.5px; color:#e2e8f0;">
+                <div style="font-weight:700; font-size:15px; margin-bottom:4px;">Chase + PayPal CSV Engine</div>
+                <div style="color:#94a3b8;">12 Auto-Categories · Zero Network Calls</div>
+                <div style="color:#34d399; font-family:'JetBrains Mono',monospace; font-size:11px; margin-top:4px;">● 1-Click Synthetic Demo Data</div>
+              </div>
+            </div>
           </div>
-          <h3>💳 Money Dashboard — Budget Review</h3>
-          <p>
-            Zero-network-call financial analyzer that imports Chase &amp; PayPal CSV exports in the browser, auto-categorizes merchants, tracks monthly category budgets, and includes 1-click synthetic sample data.
-          </p>
-          <div class="card-actions">
-            <a href="../web-builds-and-dashboards/money-dashboard/index.html" class="btn primary">Launch Dashboard →</a>
+          <div class="card-body">
+            <div class="badge-row">
+              <span class="tag teal">100% Client-Side</span>
+              <span class="tag">CSV Parser</span>
+              <span class="tag">SVG Visualization</span>
+            </div>
+            <h3>💳 Money Dashboard — Budget Review</h3>
+            <p>
+              Zero-network-call financial analyzer that imports Chase &amp; PayPal CSV exports in the browser, auto-categorizes merchants, tracks monthly category budgets, and includes 1-click synthetic sample data.
+            </p>
+            <div class="card-actions">
+              <a href="../web-builds-and-dashboards/money-dashboard/index.html" class="btn primary">Launch Dashboard →</a>
+              <a href="https://github.com/peternunley08-ops/web-builds-and-dashboards/tree/main/money-dashboard" target="_blank" rel="noopener" class="btn">Source ↗</a>
+            </div>
           </div>
         </article>
 
         <!-- Command Center UI -->
         <article class="project-card">
-          <div class="badge-row">
-            <span class="tag">Operations UI</span>
-            <span class="tag">Dark-Mode System</span>
-            <span class="tag">Zero Dependencies</span>
+          <div class="card-thumb">
+            <img class="cover" src="assets/command-center-preview.png" alt="Command Center UI Preview" loading="lazy" />
           </div>
-          <h3>🎛️ Command Center Dashboard</h3>
-          <p>
-            High-contrast dark-mode cockpit interface designed for tracking project launch gates, daily focus priorities, and portfolio KPIs in a single unified view.
-          </p>
-          <div class="card-actions">
-            <a href="../web-builds-and-dashboards/command-center-ui/index.html" class="btn primary">Launch Cockpit UI →</a>
+          <div class="card-body">
+            <div class="badge-row">
+              <span class="tag">Operations UI</span>
+              <span class="tag">Dark-Mode System</span>
+              <span class="tag">Zero Dependencies</span>
+            </div>
+            <h3>🎛️ Command Center Dashboard</h3>
+            <p>
+              High-contrast dark-mode cockpit interface designed for tracking project launch gates, daily focus priorities, and portfolio KPIs in a single unified view.
+            </p>
+            <div class="card-actions">
+              <a href="../web-builds-and-dashboards/command-center-ui/index.html" class="btn primary">Launch Cockpit UI →</a>
+              <a href="https://github.com/peternunley08-ops/web-builds-and-dashboards/tree/main/command-center-ui" target="_blank" rel="noopener" class="btn">Source ↗</a>
+            </div>
           </div>
         </article>
       </div>
     </section>
   </main>
 
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Enlarged preview" />
+  </div>
+
   <footer class="wrap">
     <div>© 2026 Peter Nunley · San Luis Obispo, CA</div>
     <div><a href="https://github.com/peternunley08-ops">github.com/peternunley08-ops</a></div>
   </footer>
 
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
