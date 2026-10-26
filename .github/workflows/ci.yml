@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify-portfolio:
+    name: Verify Portfolio JS Syntax & Assets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify inline <script> syntax & local assets
+        run: |
+          node -e '
+            const fs = require("fs");
+            const path = require("path");
+            const vm = require("vm");
+
+            const htmlFiles = [
+              "index.html",
+              "brain-navigator-demo/index.html",
+              "resume.html"
+            ];
+
+            for (const rel of htmlFiles) {
+              if (!fs.existsSync(rel)) {
+                throw new Error("Missing HTML file: " + rel);
+              }
+              const html = fs.readFileSync(rel, "utf8");
+              const scriptRegex = /<script\b([^>]*)>([\s\S]*?)<\/script>/gi;
+              let match;
+              let idx = 0;
+              while ((match = scriptRegex.exec(html)) !== null) {
+                const attrs = match[1] || "";
+                const code = match[2] || "";
+                if (/\bsrc\s*=/i.test(attrs)) continue;
+                if (/application\/(ld\+json|json)/i.test(attrs)) continue;
+                idx++;
+                new vm.Script(code, { filename: rel + "#script-" + idx });
+              }
+              console.log("✓ Verified " + idx + " inline script block(s) in " + rel);
+
+              const dir = path.dirname(rel);
+              const attrRegex = /\b(?:src|href)=["\x27]([^"\x27]+)["\x27]/gi;
+              let attrMatch;
+              while ((attrMatch = attrRegex.exec(html)) !== null) {
+                const val = attrMatch[1].split("?")[0].split("#")[0];
+                if (!val || /^(https?:|mailto:|tel:|data:|javascript:|\.\.\/)/i.test(val)) continue;
+                if (/\.(jpg|jpeg|png|svg|webp|gif|pdf)$/i.test(val)) {
+                  const target = path.resolve(dir, val);
+                  if (!fs.existsSync(target)) {
+                    throw new Error("Missing local asset referenced in " + rel + ": " + val);
+                  }
+                }
+              }
+            }
+
+            const requiredAssets = [
+              "assets/command-center-preview.png",
+              "assets/sample-oil.jpg",
+              "assets/sample-pop.jpg",
+              "assets/sample-flat.jpg",
+              "assets/screens/1-desk.jpg",
+              "assets/screens/2-school.jpg",
+              "assets/screens/3-focus.jpg",
+              "assets/screens/4-mind.jpg",
+              "assets/screens/5-steady.jpg"
+            ];
+
+            for (const asset of requiredAssets) {
+              if (!fs.existsSync(asset) || fs.statSync(asset).size === 0) {
+                throw new Error("Missing or empty required asset: " + asset);
+              }
+              console.log("✓ Verified asset exists: " + asset);
+            }
+          '

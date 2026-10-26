@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter Nunley — Engineering Resume &amp; College App Portfolio Kit</title>
+  <meta name="description" content="1-Page Software & Product Engineering Resume and Interactive College Application Copy-Paste Kit for Peter Nunley (San Luis Obispo, CA)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --bg-elev: #111826;
+      --card: #151e2f;
+      --card-hover: #1b273d;
+      --border: rgba(148, 163, 184, 0.16);
+      --border-strong: rgba(148, 163, 184, 0.3);
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #2dd4bf;
+      --accent-warm: #f59e0b;
+      --accent-green: #10b981;
+      --paper-bg: #ffffff;
+      --paper-text: #0f172a;
+      --paper-muted: #334155;
+      --paper-subtle: #475569;
+      --paper-border: #cbd5e1;
+      --paper-accent: #0f766e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background:
+        radial-gradient(900px 500px at 15% -10%, rgba(45, 212, 191, 0.11), transparent 60%),
+        radial-gradient(850px 520px at 90% 5%, rgba(245, 158, 11, 0.09), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 64px;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Top Bar / Switcher (Hidden in Print) */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(11, 15, 23, 0.86);
+      border-bottom: 1px solid var(--border);
+    }
+    .top-bar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 15.5px;
+      letter-spacing: -0.02em;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), #0ea5e9);
+      color: #041f1c;
+      font-family: 'Fraunces', serif;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+    }
+    .tab-group {
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 5px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .tab-btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--accent), #14b8a6);
+      color: #041f1c;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(45, 212, 191, 0.25);
+    }
+    .action-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 15px;
+      border-radius: 9px;
+      font-weight: 600;
+      font-size: 13px;
+      border: 1px solid var(--border-strong);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+    .btn:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-1px); }
+    .btn.primary {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #0f172a;
+      border-color: transparent;
+      font-weight: 700;
+    }
+    .btn.primary:hover { filter: brightness(1.06); }
+
+    .container {
+      max-width: 1120px;
+      margin: 28px auto 0;
+      padding: 0 24px;
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ==========================================================================
+       TAB 1: 1-PAGE PRINTABLE ENGINEERING RESUME
+       ========================================================================== */
+    .resume-toolbar {
+      max-width: 8.5in;
+      margin: 0 auto 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: rgba(21, 30, 47, 0.75);
+      border: 1px solid var(--border);
+      padding: 12px 18px;
+      border-radius: 12px;
+    }
+    .resume-toolbar-info {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(45, 212, 191, 0.14);
+      color: var(--accent);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      font-weight: 600;
+    }
+
+    .resume-sheet {
+      width: 100%;
+      max-width: 8.5in;
+      min-height: 11in;
+      margin: 0 auto;
+      background: var(--paper-bg);
+      color: var(--paper-text);
+      padding: 0.44in 0.5in;
+      border-radius: 10px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+      font-size: 9.4pt;
+      line-height: 1.36;
+    }
+
+    /* Resume Header */
+    .r-header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .r-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 21pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      line-height: 1.05;
+    }
+    .r-tagline {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: var(--paper-accent);
+      margin-top: 3px;
+    }
+    .r-contact {
+      text-align: right;
+      font-size: 8.6pt;
+      color: var(--paper-muted);
+      line-height: 1.42;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .r-contact a {
+      color: #0f172a;
+      text-decoration: underline;
+      text-decoration-color: #94a3b8;
+      text-underline-offset: 2px;
+    }
+    .r-contact a:hover { color: var(--paper-accent); }
+
+    /* Resume Section */
+    .r-section { margin-bottom: 9.5px; }
+    .r-sec-title {
+      font-size: 8.8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0f172a;
+      border-bottom: 1px solid var(--paper-border);
+      padding-bottom: 2.5px;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .r-sec-title span.sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5pt;
+      font-weight: 500;
+      color: var(--paper-subtle);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* Education & Skills Compact Grid */
+    .r-edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .r-edu-school { font-weight: 700; font-size: 9.5pt; color: #0f172a; }
+    .r-edu-meta { font-size: 8.6pt; font-weight: 600; color: var(--paper-muted); }
+    .r-edu-details { font-size: 8.6pt; color: var(--paper-muted); margin-bottom: 3px; }
+
+    .r-skills-grid {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      row-gap: 3px;
+      column-gap: 8px;
+      font-size: 8.75pt;
+    }
+    .r-skill-cat { font-weight: 700; color: #0f172a; }
+    .r-skill-list { color: var(--paper-muted); }
+
+    /* Projects & Experience Items */
+    .r-item { margin-bottom: 7.5px; }
+    .r-item:last-child { margin-bottom: 0; }
+    .r-item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .r-item-title {
+      font-weight: 700;
+      font-size: 9.5pt;
+      color: #0f172a;
+    }
+    .r-item-tech {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.8pt;
+      color: var(--paper-accent);
+      font-weight: 600;
+    }
+    .r-item-links {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.8pt;
+      color: var(--paper-subtle);
+    }
+    .r-item-links a {
+      color: #0f172a;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: #94a3b8;
+    }
+    .r-bullets {
+      list-style: none;
+      margin-top: 2px;
+      padding-left: 11px;
+    }
+    .r-bullets li {
+      position: relative;
+      font-size: 8.75pt;
+      color: var(--paper-muted);
+      margin-bottom: 1.8px;
+    }
+    .r-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: -10px;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .r-bullets strong { color: #0f172a; font-weight: 600; }
+
+    /* ==========================================================================
+       TAB 2: COLLEGE APPLICATION COPY-PASTE KIT
+       ========================================================================== */
+    .kit-hero {
+      background: linear-gradient(180deg, var(--card), var(--bg-elev));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin-bottom: 26px;
+    }
+    .kit-hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(24px, 3.2vw, 34px);
+      margin-bottom: 8px;
+    }
+    .kit-hero p {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 780px;
+    }
+    .kit-limits-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .limit-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+    }
+
+    .kit-section { margin-bottom: 34px; }
+    .kit-sec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .kit-sec-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      color: var(--text);
+    }
+    .kit-sec-header p {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    .kit-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .kit-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      transition: border-color 0.18s ease;
+    }
+    .kit-card:hover { border-color: var(--border-strong); }
+    .kit-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .kit-card-title {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .kit-meta-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: rgba(245, 158, 11, 0.14);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .copy-field-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 720px) {
+      .copy-field-group { grid-template-columns: 1fr; }
+    }
+    .copy-field {
+      background: #0b101b;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 12px 14px;
+    }
+    .copy-field.full { grid-column: 1 / -1; }
+    .copy-field-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 7px;
+    }
+    .field-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+    .field-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .char-counter {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background: rgba(16, 185, 129, 0.14);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      font-weight: 600;
+    }
+    .char-counter.over {
+      background: rgba(239, 68, 68, 0.18);
+      color: #f87171;
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+    .copy-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(45, 212, 191, 0.14);
+      color: var(--accent);
+      border: 1px solid rgba(45, 212, 191, 0.35);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .copy-btn:hover {
+      background: var(--accent);
+      color: #041f1c;
+    }
+    .copy-btn.copied {
+      background: #10b981;
+      color: #041f1c;
+      border-color: #10b981;
+    }
+    .copy-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      color: #e2e8f0;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      outline: none;
+      border-radius: 6px;
+    }
+    .copy-text:focus {
+      box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.35);
+    }
+    .copy-text.mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.8px;
+      line-height: 1.55;
+    }
+
+    /* Print Media Query — Strictly 1 Page Clean Output */
+    @media print {
+      @page {
+        size: letter portrait;
+        margin: 0.36in 0.42in;
+      }
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .no-print,
+      .top-bar,
+      .resume-toolbar,
+      #tab-kit {
+        display: none !important;
+      }
+      .container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      #tab-resume {
+        display: block !important;
+      }
+      .resume-sheet {
+        max-width: 100% !important;
+        min-height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation & Tab Switcher (Hidden when printing) -->
+  <header class="top-bar no-print">
+    <div class="top-bar-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">P</span>
+        <span>Peter Nunley · Engineering &amp; Admissions Kit</span>
+      </a>
+
+      <div class="tab-group" role="tablist">
+        <button type="button" class="tab-btn active" id="btn-tab-resume" onclick="switchTab('resume')" role="tab" aria-selected="true">
+          📄 1-Page Printable Engineering Resume
+        </button>
+        <button type="button" class="tab-btn" id="btn-tab-kit" onclick="switchTab('kit')" role="tab" aria-selected="false">
+          🎓 College Application Copy-Paste Kit
+        </button>
+      </div>
+
+      <div class="action-group">
+        <button type="button" class="btn primary" onclick="printResume()">
+          🖨️ Print / Save as PDF
+        </button>
+        <a href="index.html" class="btn">← Portfolio Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ========================================================================
+         TAB 1: 1-PAGE PRINTABLE ENGINEERING RESUME
+         ======================================================================== -->
+    <section id="tab-resume" class="tab-panel active" role="tabpanel">
+      <div class="resume-toolbar no-print">
+        <div class="resume-toolbar-info">
+          <span class="badge-pill">ATS &amp; Admissions Ready</span>
+          <span>Formatted to fit strictly on a single US Letter page (8.5&quot; × 11&quot;) when printed or saved as PDF.</span>
+        </div>
+        <button type="button" class="btn primary" onclick="printResume()">🖨️ Print / Save 1-Page PDF</button>
+      </div>
+
+      <article class="resume-sheet" aria-label="1-Page Software and Product Engineering Resume">
+        <!-- Header -->
+        <header class="r-header">
+          <div>
+            <h1 class="r-name">Peter Nunley</h1>
+            <div class="r-tagline">Software &amp; Product Engineering · Full-Stack Mobile, Real-Time Sync Systems &amp; AI Automation</div>
+          </div>
+          <div class="r-contact">
+            <div>San Luis Obispo, CA · Class of 2027</div>
+            <div><a href="https://github.com/peternunley08-ops" target="_blank" rel="noopener">github.com/peternunley08-ops</a></div>
+            <div><a href="https://peternunley08-ops.github.io/peternunley08-ops/" target="_blank" rel="noopener">peternunley08-ops.github.io/peternunley08-ops/</a></div>
+          </div>
+        </header>
+
+        <!-- Education -->
+        <section class="r-section">
+          <div class="r-sec-title">
+            <span>Education &amp; Academic Honors</span>
+            <span class="sub">Arroyo Grande, CA &amp; San Luis Obispo, CA</span>
+          </div>
+          <div class="r-edu-row">
+            <span class="r-edu-school">Arroyo Grande High School · Dual Enrollment: Cuesta College &amp; Allan Hancock College</span>
+            <span class="r-edu-meta">Expected Graduation: June 2027 · Weighted GPA: 4.54</span>
+          </div>
+          <div class="r-edu-details">
+            <strong>STEM &amp; AP Coursework:</strong> AP Computer Science, AP Calculus, AP Physics, AP Precalculus, AP English Language, AP Psychology, AP Environmental Science, AP Government. <strong>Honors:</strong> Cal Poly EPIC (Engineering Possibilities in College) Selected Residential Participant (18 Engineering Labs: NVIDIA JetBot Autonomous Vision &amp; Arduino Robotics), California Scholarship Federation (CSF), FCC Licensed Amateur Radio Operator (Technician Class).
+          </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="r-section">
+          <div class="r-sec-title">
+            <span>Technical Skills</span>
+            <span class="sub">Production Stack &amp; Verification Tooling</span>
+          </div>
+          <div class="r-skills-grid">
+            <div class="r-skill-cat">Languages:</div>
+            <div class="r-skill-list">TypeScript (Strict), JavaScript (ES2024), Python, Java, SQL (PostgreSQL), HTML5 / CSS3 Tokens, Shopify Liquid</div>
+            <div class="r-skill-cat">Frameworks &amp; Cloud:</div>
+            <div class="r-skill-list">React Native (0.86), Expo SDK 57, React 18, Node.js, Supabase (RLS &amp; Edge Functions), Netlify Functions &amp; Blobs, Google Apps Script, Leaflet.js</div>
+            <div class="r-skill-cat">AI &amp; Systems:</div>
+            <div class="r-skill-list">Anthropic Claude API (Vision &amp; Structured Output), Google Gemini Vision API, Multi-Agent Pipelines, Optimistic Concurrency / ETag 3-Way Merge, Node Test Runner (<code>node:test</code>), GitHub Actions CI</div>
+          </div>
+        </section>
+
+        <!-- Selected Software & Engineering Projects -->
+        <section class="r-section">
+          <div class="r-sec-title">
+            <span>Selected Software &amp; Product Engineering Projects</span>
+            <span class="sub">All repositories verified with GitHub Actions CI</span>
+          </div>
+
+          <!-- Project 1 -->
+          <div class="r-item">
+            <div class="r-item-head">
+              <div>
+                <span class="r-item-title">1. Brain Navigator — iOS Student Companion App</span>
+                <span class="r-item-tech">· React Native, Expo SDK 57, TypeScript, Zustand, Supabase</span>
+              </div>
+              <div class="r-item-links">
+                <a href="https://peternunley08-ops.github.io/peternunley08-ops/brain-navigator-demo/" target="_blank" rel="noopener">Live iOS Simulator</a> |
+                <a href="https://github.com/peternunley08-ops/brain-navigator" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+            <ul class="r-bullets">
+              <li>Architected a local-first iPhone student companion across <strong>7 iterative engineering rounds</strong> featuring time-aware <em>Candlelight</em> theming (<em>First Light</em> to <em>Night Room</em>), assignment/GPA tracking, and procedural Web Audio focus synthesis without streak pressure.</li>
+              <li>Wrote <strong>133 automated unit tests across 38 suites</strong> verifying GPA calculation, schedule parsing, crisis-keyword redaction, night-clock rollover, and privacy-guarded on-device storage with iOS Keychain integration and a synthetic demo profile (<em>Riley</em>).</li>
+            </ul>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="r-item">
+            <div class="r-item-head">
+              <div>
+                <span class="r-item-title">2. DeckHand — Multi-Device Aquatics Roster &amp; Lifeguard Sync</span>
+                <span class="r-item-tech">· React 18, Vite, Netlify Blobs, Supabase RLS, Claude Vision</span>
+              </div>
+              <div class="r-item-links">
+                <a href="https://peternunley08-ops.github.io/swim-roster-ops/app/" target="_blank" rel="noopener">Live App</a> |
+                <a href="https://github.com/peternunley08-ops/swim-roster-ops" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+            <ul class="r-bullets">
+              <li>Built a real-time aquatics scheduling and attendance PWA deployed for Lucia Mar USD summer swim operations to coordinate <strong>20+ lifeguards/instructors and 200+ students</strong>, replacing paper sheets blowing off windy pool decks.</li>
+              <li>Engineered a <strong>3-way ETag optimistic concurrency merge engine</strong> (verified by 13 automated unit tests) that reconciles simultaneous attendance edits across poolside phones without data loss, paired with <strong>Claude Vision OCR</strong> clipboard import and owner-hardened Supabase Row-Level Security (RLS).</li>
+            </ul>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="r-item">
+            <div class="r-item-head">
+              <div>
+                <span class="r-item-title">3. Nestral &amp; Agent OS — Multi-Agent Business &amp; Portfolio Automation</span>
+                <span class="r-item-tech">· Node.js, Python, Pydantic, Stripe API, Shopify Admin API</span>
+              </div>
+              <div class="r-item-links">
+                <a href="https://peternunley08-ops.github.io/web-builds-and-dashboards/command-center-ui/" target="_blank" rel="noopener">Live Cockpit</a> |
+                <a href="https://github.com/peternunley08-ops/web-builds-and-dashboards" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+            <ul class="r-bullets">
+              <li>Designed a zero-dependency morning brief engine, deterministic portfolio Q&amp;A query router, and high-contrast operations cockpit unifying Stripe, Shopify, and project readiness telemetry.</li>
+              <li>Orchestrated a <strong>6-agent sequential software pipeline</strong> with strict Pydantic schema validation and quarantined patch review gates so automated code modifications never bypass human approval.</li>
+            </ul>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="r-item">
+            <div class="r-item-head">
+              <div>
+                <span class="r-item-title">4. SLO Agency OS &amp; E-Commerce Brand Systems (LUMÉRA Halo)</span>
+                <span class="r-item-tech">· Python, Google Places API, Shopify OS 2.0 Liquid</span>
+              </div>
+              <div class="r-item-links">
+                <a href="https://github.com/peternunley08-ops" target="_blank" rel="noopener">GitHub Profile</a>
+              </div>
+            </div>
+            <ul class="r-bullets">
+              <li>Built an automated San Luis Obispo local business lead discovery and multi-variant web mockup generator using Python and the Google Places API to identify and prototype upgrades for regional storefronts.</li>
+              <li>Developed a custom <strong>17-section Shopify OS 2.0 Liquid theme</strong> (<em>LUMÉRA Halo</em>) engineered for zero-dependency performance, modular JSON templates, and verified <strong>WCAG AA contrast compliance</strong>.</li>
+            </ul>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="r-item">
+            <div class="r-item-head">
+              <div>
+                <span class="r-item-title">5. Donut Dash 5K, Northstar Paws &amp; Privacy-First Money Dashboard</span>
+                <span class="r-item-tech">· Leaflet.js, Google Apps Script, Gemini Vision API, SVG</span>
+              </div>
+              <div class="r-item-links">
+                <a href="https://peternunley08-ops.github.io/web-builds-and-dashboards/donut-dash/" target="_blank" rel="noopener">Donut Dash</a> |
+                <a href="https://peternunley08-ops.github.io/web-builds-and-dashboards/northstar-paws/" target="_blank" rel="noopener">Northstar Paws</a> |
+                <a href="https://peternunley08-ops.github.io/web-builds-and-dashboards/money-dashboard/?demo=1" target="_blank" rel="noopener">Money Dashboard</a>
+              </div>
+            </div>
+            <ul class="r-bullets">
+              <li>Created the official <strong>Donut Dash 5K</strong> community race portal benefiting the <strong>SLO Food Bank</strong> with interactive Leaflet.js route mapping and age-tier pricing, plus a 100% client-side Chase/PayPal CSV <strong>Money Dashboard</strong> with SVG budget donuts.</li>
+              <li>Engineered <strong>Northstar Paws</strong>, a serverless pet-portrait storefront backed by a 24/7 Google Apps Script + Drive/Sheets + <strong>Gemini Vision API</strong> pipeline that automatically generates and emails AI artwork proofs upon checkout.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Leadership, Operations & Community Service -->
+        <section class="r-section" style="margin-bottom: 0;">
+          <div class="r-sec-title">
+            <span>Leadership, Operations &amp; Community Impact</span>
+            <span class="sub">San Luis Obispo County, CA</span>
+          </div>
+
+          <div class="r-item">
+            <div class="r-item-head">
+              <div>
+                <span class="r-item-title">Swim Program Manager &amp; Head Lifeguard</span>
+                <span class="r-item-tech">· Lucia Mar Unified School District Aquatics &amp; Shell Beach Surf Shop Acting Manager</span>
+              </div>
+              <div class="r-item-links">2025 – Present</div>
+            </div>
+            <ul class="r-bullets">
+              <li>Directed daily deck rotations, shift trades, payroll rounding, and safety compliance for 20+ lifeguards/instructors and 200+ swimmers; also trusted as Acting Manager running daily retail and surf-lesson operations at Shell Beach Surf Shop.</li>
+            </ul>
+          </div>
+
+          <div class="r-item">
+            <div class="r-item-head">
+              <div>
+                <span class="r-item-title">Varsity Water Polo &amp; Varsity Swim Team Captain · Bilingual Community Volunteer</span>
+                <span class="r-item-tech">· AGHS Athletics, Guadalupe Senior Center &amp; SLO Food Bank</span>
+              </div>
+              <div class="r-item-links">2023 – Present</div>
+            </div>
+            <ul class="r-bullets">
+              <li><strong>League Champion (50-yd Freestyle, 22.60s)</strong>, First Team All-League, Team MVP, and USA Water Polo Junior Olympics competitor; replaced underclassman hazing with inclusive mentorship and drove rural teammates to 5:30 AM practices.</li>
+              <li>Serve retired farmworkers in Spanish and English at the <strong>Guadalupe Senior Center</strong>, harvest leftover farm produce with the <strong>SLO Food Bank Gleaning Program</strong> (serving 400+ residents daily), and provide daily caregiving for my 90-year-old grandfather.</li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ========================================================================
+         TAB 2: COLLEGE APPLICATION COPY-PASTE KIT
+         ======================================================================== -->
+    <section id="tab-kit" class="tab-panel no-print" role="tabpanel">
+      <div class="kit-hero">
+        <h1>🎓 College Application Copy-Paste Kit</h1>
+        <p>
+          Ready-to-paste entries for the <strong>Common Application</strong>, <strong>UC Application</strong>, and <strong>Additional Information</strong> technical portfolio block. Every field has an interactive character counter verified against strict admissions limits — edit any text directly in the browser to watch the character count update live.
+        </p>
+        <div class="kit-limits-bar">
+          <span class="limit-chip">✓ Common App Position ≤ 50 chars</span>
+          <span class="limit-chip">✓ Common App Organization ≤ 100 chars</span>
+          <span class="limit-chip">✓ Common App Description ≤ 150 chars</span>
+          <span class="limit-chip">✓ UC Activity Description ≤ 350 chars</span>
+        </div>
+      </div>
+
+      <!-- SECTION A: COMMON APP ACTIVITIES -->
+      <div class="kit-section">
+        <div class="kit-sec-header">
+          <div>
+            <h2>1. Common App Activities Entries (Strict 50 / 100 / 150 Limits)</h2>
+            <p>Action-verb driven descriptions tailored to Peter's voice and verified below the 150-character ceiling.</p>
+          </div>
+        </div>
+
+        <div class="kit-grid">
+          <!-- Common App Entry 1: Swim Program App (DeckHand / AG Lifeguard) -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-card-title">
+                <span>🏊‍♂️ Activity #1: Creator — School District Swim Program App (DeckHand)</span>
+              </div>
+              <span class="kit-meta-tag">Computer/Technology · 8 wks/yr · 14 hrs/wk</span>
+            </div>
+            <div class="copy-field-group">
+              <div class="copy-field">
+                <div class="copy-field-top">
+                  <span class="field-label">Position / Leadership (≤50)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="50">19 / 50</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Creator &amp; Developer</div>
+              </div>
+              <div class="copy-field">
+                <div class="copy-field-top">
+                  <span class="field-label">Organization Name (≤100)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="100">67 / 100</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Lucia Mar USD Swim Program Scheduling App (aglifeguard.netlify.app)</div>
+              </div>
+              <div class="copy-field full">
+                <div class="copy-field-top">
+                  <span class="field-label">Activity Description — Original Voice Version (≤150)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="150">136 / 150</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Built a mobile-accessible web app with HTML, a database backend, and user roles to replace paper schedules blowing off windy pool decks.</div>
+              </div>
+              <div class="copy-field full">
+                <div class="copy-field-top">
+                  <span class="field-label">Activity Description — Technical Engineering Option (≤150)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="150">147 / 150</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Built React/Supabase aquatics app with 3-way multi-phone sync &amp; Claude Vision OCR import to replace paper schedules for 20+ lifeguards &amp; 200+ kids.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Common App Entry 2: Brain Navigator & Independent Software Portfolio -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-card-title">
+                <span>🕯️ Activity #2: Independent iOS &amp; Full-Stack Software Developer (Brain Navigator)</span>
+              </div>
+              <span class="kit-meta-tag">Computer/Technology · 36 wks/yr · 10 hrs/wk</span>
+            </div>
+            <div class="copy-field-group">
+              <div class="copy-field">
+                <div class="copy-field-top">
+                  <span class="field-label">Position / Leadership (≤50)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="50">37 / 50</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Independent iOS &amp; Full-Stack Developer</div>
+              </div>
+              <div class="copy-field">
+                <div class="copy-field-top">
+                  <span class="field-label">Organization Name (≤100)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="100">68 / 100</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Brain Navigator iOS App &amp; Open-Source Portfolio (peternunley08-ops)</div>
+              </div>
+              <div class="copy-field full">
+                <div class="copy-field-top">
+                  <span class="field-label">Activity Description (≤150)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="150">148 / 150</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Built local-first React Native/TypeScript iOS student app (133 unit tests), SLO Food Bank 5K race portal, and serverless Gemini AI e-commerce tools.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Common App Entry 3: Cal Poly EPIC -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-card-title">
+                <span>🤖 Activity #3: Cal Poly EPIC Robotics &amp; Engineering Program</span>
+              </div>
+              <span class="kit-meta-tag">Science/Math · 1 wk/yr · 60 hrs/wk</span>
+            </div>
+            <div class="copy-field-group">
+              <div class="copy-field">
+                <div class="copy-field-top">
+                  <span class="field-label">Position / Leadership (≤50)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="50">20 / 50</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Selected Participant</div>
+              </div>
+              <div class="copy-field">
+                <div class="copy-field-top">
+                  <span class="field-label">Organization Name (≤100)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="100">52 / 100</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Cal Poly Engineering Possibilities in College (EPIC)</div>
+              </div>
+              <div class="copy-field full">
+                <div class="copy-field-top">
+                  <span class="field-label">Activity Description (≤150)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="150">148 / 150</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Completed intensive weeklong residential engineering program with 18 labs; built an autonomous-driving JetBot robot and programmed an Arduino robot.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Common App Entry 4: Swim Program Manager -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-card-title">
+                <span>🛟 Activity #4: School District Swim Program Manager &amp; Head Lifeguard</span>
+              </div>
+              <span class="kit-meta-tag">Work (Paid) · 10 wks/yr · 27 hrs/wk</span>
+            </div>
+            <div class="copy-field-group">
+              <div class="copy-field">
+                <div class="copy-field-top">
+                  <span class="field-label">Position / Leadership (≤50)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="50">37 / 50</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Swim Program Manager &amp; Head Lifeguard</div>
+              </div>
+              <div class="copy-field">
+                <div class="copy-field-top">
+                  <span class="field-label">Organization Name (≤100)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="100">42 / 100</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Lucia Mar Unified School District Aquatics</div>
+              </div>
+              <div class="copy-field full">
+                <div class="copy-field-top">
+                  <span class="field-label">Activity Description (≤150)</span>
+                  <div class="field-right">
+                    <span class="char-counter" data-max="150">143 / 150</span>
+                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                  </div>
+                </div>
+                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Used my scheduling app to coordinate 20+ lifeguards/instructors and 200+ students across district swim lessons, diving, and open swim programs.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION B: UC APPLICATION ACTIVITIES (350 CHAR LIMIT) -->
+      <div class="kit-section">
+        <div class="kit-sec-header">
+          <div>
+            <h2>2. UC Application Activities &amp; Awards Entries (≤350 Characters)</h2>
+            <p>Expanded descriptions for the University of California 20-slot application, combining concrete impact with technical depth.</p>
+          </div>
+        </div>
+
+        <div class="kit-grid">
+          <!-- UC Entry 1: DeckHand / Lucia Mar Swim Scheduling App -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-card-title">🏊‍♂️ UC Entry #1: Creator &amp; Lead Developer — DeckHand / LMUSD Swim Scheduling App</div>
+              <span class="kit-meta-tag">Extracurricular / Work · ≤350 Chars</span>
+            </div>
+            <div class="copy-field full">
+              <div class="copy-field-top">
+                <span class="field-label">UC Activity Description (≤350)</span>
+                <div class="field-right">
+                  <span class="char-counter" data-max="350">344 / 350</span>
+                  <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                </div>
+              </div>
+              <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Paper schedules kept blowing off our windy pool deck and quiet lifeguards got left off shifts, so I built a full-stack React &amp; Supabase web app (aglifeguard.netlify.app). Engineered 3-way multi-phone sync, Claude Vision photo roster import, and role security to coordinate 20+ lifeguards/instructors and 200+ swimmers all summer.</div>
+            </div>
+          </div>
+
+          <!-- UC Entry 2: Brain Navigator iOS App -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-card-title">🕯️ UC Entry #2: Creator — Brain Navigator iOS Student Companion App</div>
+              <span class="kit-meta-tag">Extracurricular · ≤350 Chars</span>
+            </div>
+            <div class="copy-field full">
+              <div class="copy-field-top">
+                <span class="field-label">UC Activity Description (≤350)</span>
+                <div class="field-right">
+                  <span class="char-counter" data-max="350">342 / 350</span>
+                  <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                </div>
+              </div>
+              <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Designed and built a calm, local-first iPhone app in React Native, Expo, and TypeScript to help high schoolers manage classes, GPA, focus sessions, and mental clutter without streak guilt. Engineered across 7 iterative rounds with 133 automated unit tests, procedural Web Audio synthesis, iOS Keychain privacy, and an interactive web demo.</div>
+            </div>
+          </div>
+
+          <!-- UC Entry 3: Community Web Builds & AI Automation -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-card-title">⚡ UC Entry #3: Community Web Builds, Serverless AI &amp; E-Commerce Systems</div>
+              <span class="kit-meta-tag">Extracurricular / Community · ≤350 Chars</span>
+            </div>
+            <div class="copy-field full">
+              <div class="copy-field-top">
+                <span class="field-label">UC Activity Description (≤350)</span>
+                <div class="field-right">
+                  <span class="char-counter" data-max="350">346 / 350</span>
+                  <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                </div>
+              </div>
+              <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Built the Donut Dash 5K race website &amp; interactive Leaflet route map benefiting the SLO Food Bank; engineered Northstar Paws (serverless Google Apps Script + Gemini Vision AI pet portrait pipeline); created a 100% client-side Chase/PayPal CSV Money Dashboard; and coded a 17-section WCAG AA Shopify Liquid theme and 6-agent Python pipeline.</div>
+            </div>
+          </div>
+
+          <!-- UC Entry 4: Cal Poly EPIC -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-card-title">🤖 UC Entry #4: Cal Poly EPIC (Engineering Possibilities in College)</div>
+              <span class="kit-meta-tag">Educational Preparation Program · ≤350 Chars</span>
+            </div>
+            <div class="copy-field full">
+              <div class="copy-field-top">
+                <span class="field-label">UC Program Description (≤350)</span>
+                <div class="field-right">
+                  <span class="char-counter" data-max="350">333 / 350</span>
+                  <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
+                </div>
+              </div>
+              <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Selected for Cal Poly SLO's intensive 60-hour residential engineering program completing 18 hands-on university labs. Assembled and programmed an autonomous NVIDIA JetBot and Arduino robot, calibrating computer vision, ultrasonic obstacle avoidance, and mechanical error margins for the autonomous Stop-Sign navigation challenge.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION C: ADDITIONAL INFORMATION TECHNICAL PORTFOLIO BLOCK -->
+      <div class="kit-section">
+        <div class="kit-sec-header">
+          <div>
+            <h2>3. Common App &amp; UC "Additional Information" Technical Portfolio Block</h2>
+            <p>Copy and paste this concise, admissions-friendly summary into the Additional Information section so readers can inspect live demos and automated tests in one click.</p>
+          </div>
+        </div>
+
+        <div class="kit-card">
+          <div class="kit-card-head">
+            <div class="kit-card-title">🔗 Software &amp; Product Engineering Portfolio Summary (Plain Text for Common App / UC)</div>
+            <span class="kit-meta-tag">Verified Live URLs · Concise &amp; Skimmable</span>
+          </div>
+          <div class="copy-field full">
+            <div class="copy-field-top">
+              <span class="field-label">Additional Information Block (Copy &amp; Paste Ready)</span>
+              <div class="field-right">
+                <span class="char-counter" data-max="2500">1295 / 2500</span>
+                <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy Block</button>
+              </div>
+            </div>
+            <div class="copy-text mono" contenteditable="true" oninput="updateCounter(this)">SOFTWARE &amp; ENGINEERING PORTFOLIO (LIVE INTERACTIVE DEMOS &amp; SOURCE)
+Live Portfolio Hub: https://peternunley08-ops.github.io/peternunley08-ops/
+GitHub Profile: https://github.com/peternunley08-ops
+
+1. Brain Navigator (iOS Student Companion App — React Native, Expo, TypeScript, Supabase)
+• Calm, local-first iPhone app helping students track classes, GPA, focus sessions, and mental clutter without streak pressure. Built across 7 rounds with 133 automated unit tests across 38 suites.
+• Interactive iPhone Simulator: https://peternunley08-ops.github.io/peternunley08-ops/brain-navigator-demo/
+• Source &amp; CI Tests: https://github.com/peternunley08-ops/brain-navigator
+
+2. DeckHand / LMUSD Swim Roster &amp; Lifeguard Sync (React 18, Vite, Supabase RLS, Claude Vision)
+• Real-time aquatics scheduling &amp; attendance web app built for our school district pool (20+ lifeguards/instructors, 200+ swimmers). Features a 3-way ETag optimistic concurrency merge engine so multiple poolside phones never overwrite each other, plus AI photo roster import.
+• Live App Demo: https://peternunley08-ops.github.io/swim-roster-ops/app/
+• Source &amp; Sync Tests: https://github.com/peternunley08-ops/swim-roster-ops
+
+3. Community Web Builds, Serverless AI &amp; Dashboards (Leaflet.js, Google Apps Script, Gemini API)
+• Donut Dash 5K (SLO Food Bank Fundraiser &amp; Interactive Course Map): https://peternunley08-ops.github.io/web-builds-and-dashboards/donut-dash/
+• Northstar Paws (Serverless Drive/Sheets/Gemini AI Pet Portrait Storefront): https://peternunley08-ops.github.io/web-builds-and-dashboards/northstar-paws/
+• Money Dashboard (100% Client-Side Chase/PayPal CSV Budget Analyzer): https://peternunley08-ops.github.io/web-builds-and-dashboards/money-dashboard/?demo=1</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function switchTab(tabName) {
+      var isResume = tabName === 'resume';
+      document.getElementById('tab-resume').classList.toggle('active', isResume);
+      document.getElementById('tab-kit').classList.toggle('active', !isResume);
+      document.getElementById('btn-tab-resume').classList.toggle('active', isResume);
+      document.getElementById('btn-tab-kit').classList.toggle('active', !isResume);
+      document.getElementById('btn-tab-resume').setAttribute('aria-selected', isResume ? 'true' : 'false');
+      document.getElementById('btn-tab-kit').setAttribute('aria-selected', !isResume ? 'true' : 'false');
+    }
+
+    function printResume() {
+      switchTab('resume');
+      window.print();
+    }
+
+    function updateCounter(el) {
+      var field = el.closest('.copy-field');
+      if (!field) return;
+      var counter = field.querySelector('.char-counter');
+      if (!counter) return;
+      var max = parseInt(counter.getAttribute('data-max') || '150', 10);
+      var text = (el.innerText || el.textContent || '').replace(/\r\n/g, '\n').trim();
+      var len = text.length;
+      counter.textContent = len + ' / ' + max + ' chars';
+      counter.classList.toggle('over', len > max);
+    }
+
+    function copyField(btn) {
+      var field = btn.closest('.copy-field');
+      if (!field) return;
+      var textEl = field.querySelector('.copy-text');
+      if (!textEl) return;
+      var text = (textEl.innerText || textEl.textContent || '').trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          showCopied(btn);
+        });
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showCopied(btn);
+      }
+    }
+
+    function showCopied(btn) {
+      var orig = btn.getAttribute('data-orig') || btn.textContent;
+      btn.setAttribute('data-orig', orig);
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(function () {
+        btn.textContent = orig;
+        btn.classList.remove('copied');
+      }, 1600);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var fields = document.querySelectorAll('.copy-text');
+      for (var i = 0; i < fields.length; i++) {
+        updateCounter(fields[i]);
+      }
+      if (window.location.hash === '#kit') {
+        switchTab('kit');
+      }
+    });
+  </script>
+</body>
+</html>
