@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Peter Nunley — Engineering Resume &amp; College App Portfolio Kit</title>
-  <meta name="description" content="1-Page Software & Product Engineering Resume and Interactive College Application Copy-Paste Kit for Peter Nunley (San Luis Obispo, CA)." />
+  <title>Peter Nunley — Software &amp; Product Engineering Resume</title>
+  <meta name="description" content="1-Page Software &amp; Product Engineering Resume for Peter Nunley (San Luis Obispo, CA)." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -536,7 +536,7 @@
       .no-print,
       .top-bar,
       .resume-toolbar,
-      #tab-kit {
+       {
         display: none !important;
       }
       .container {
@@ -565,20 +565,11 @@
     <div class="top-bar-inner">
       <a href="index.html" class="brand">
         <span class="brand-mark">P</span>
-        <span>Peter Nunley · Engineering &amp; Admissions Kit</span>
+        <span>Peter Nunley · Engineering Resume</span>
       </a>
 
-      <div class="tab-group" role="tablist">
-        <button type="button" class="tab-btn active" id="btn-tab-resume" onclick="switchTab('resume')" role="tab" aria-selected="true">
-          📄 1-Page Printable Engineering Resume
-        </button>
-        <button type="button" class="tab-btn" id="btn-tab-kit" onclick="switchTab('kit')" role="tab" aria-selected="false">
-          🎓 College Application Copy-Paste Kit
-        </button>
-      </div>
-
       <div class="action-group">
-        <button type="button" class="btn primary" onclick="printResume()">
+        <button type="button" class="btn primary" onclick="window.print()">
           🖨️ Print / Save as PDF
         </button>
         <a href="index.html" class="btn">← Portfolio Home</a>
@@ -587,20 +578,15 @@
   </header>
 
   <main class="container">
-
-    <!-- ========================================================================
-         TAB 1: 1-PAGE PRINTABLE ENGINEERING RESUME
-         ======================================================================== -->
-    <section id="tab-resume" class="tab-panel active" role="tabpanel">
-      <div class="resume-toolbar no-print">
-        <div class="resume-toolbar-info">
-          <span class="badge-pill">ATS &amp; Admissions Ready</span>
-          <span>Formatted to fit strictly on a single US Letter page (8.5&quot; × 11&quot;) when printed or saved as PDF.</span>
-        </div>
-        <button type="button" class="btn primary" onclick="printResume()">🖨️ Print / Save 1-Page PDF</button>
+    <div class="resume-toolbar no-print">
+      <div class="resume-toolbar-info">
+        <span class="badge-pill">ATS &amp; Print Ready</span>
+        <span>Formatted to fit strictly on a single US Letter page (8.5&quot; × 11&quot;) when printed or saved as PDF.</span>
       </div>
+      <button type="button" class="btn primary" onclick="window.print()">🖨️ Print / Save 1-Page PDF</button>
+    </div>
 
-      <article class="resume-sheet" aria-label="1-Page Software and Product Engineering Resume">
+    <article class="resume-sheet" aria-label="1-Page Software and Product Engineering Resume">
         <!-- Header -->
         <header class="r-header">
           <div>
@@ -778,415 +764,12 @@
           </div>
         </section>
       </article>
-    </section>
-
-    <!-- ========================================================================
-         TAB 2: COLLEGE APPLICATION COPY-PASTE KIT
-         ======================================================================== -->
-    <section id="tab-kit" class="tab-panel no-print" role="tabpanel">
-      <div class="kit-hero">
-        <h1>🎓 College Application Copy-Paste Kit</h1>
-        <p>
-          Ready-to-paste entries for the <strong>Common Application</strong>, <strong>UC Application</strong>, and <strong>Additional Information</strong> technical portfolio block. Every field has an interactive character counter verified against strict admissions limits — edit any text directly in the browser to watch the character count update live.
-        </p>
-        <div class="kit-limits-bar">
-          <span class="limit-chip">✓ Common App Position ≤ 50 chars</span>
-          <span class="limit-chip">✓ Common App Organization ≤ 100 chars</span>
-          <span class="limit-chip">✓ Common App Description ≤ 150 chars</span>
-          <span class="limit-chip">✓ UC Activity Description ≤ 350 chars</span>
-        </div>
-      </div>
-
-      <!-- SECTION A: COMMON APP ACTIVITIES -->
-      <div class="kit-section">
-        <div class="kit-sec-header">
-          <div>
-            <h2>1. Common App Activities Entries (Strict 50 / 100 / 150 Limits)</h2>
-            <p>Action-verb driven descriptions tailored to Peter's voice and verified below the 150-character ceiling.</p>
-          </div>
-        </div>
-
-        <div class="kit-grid">
-          <!-- Common App Entry 1: Swim Program App (DeckHand / AG Lifeguard) -->
-          <div class="kit-card">
-            <div class="kit-card-head">
-              <div class="kit-card-title">
-                <span>🏊‍♂️ Activity #1: Creator — School District Swim Program App (DeckHand)</span>
-              </div>
-              <span class="kit-meta-tag">Computer/Technology · 8 wks/yr · 14 hrs/wk</span>
-            </div>
-            <div class="copy-field-group">
-              <div class="copy-field">
-                <div class="copy-field-top">
-                  <span class="field-label">Position / Leadership (≤50)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="50">19 / 50</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Creator &amp; Developer</div>
-              </div>
-              <div class="copy-field">
-                <div class="copy-field-top">
-                  <span class="field-label">Organization Name (≤100)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="100">67 / 100</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Lucia Mar USD Swim Program Scheduling App (aglifeguard.netlify.app)</div>
-              </div>
-              <div class="copy-field full">
-                <div class="copy-field-top">
-                  <span class="field-label">Activity Description — Original Voice Version (≤150)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="150">136 / 150</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Built a mobile-accessible web app with HTML, a database backend, and user roles to replace paper schedules blowing off windy pool decks.</div>
-              </div>
-              <div class="copy-field full">
-                <div class="copy-field-top">
-                  <span class="field-label">Activity Description — Technical Engineering Option (≤150)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="150">147 / 150</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Built React/Supabase aquatics app with 3-way multi-phone sync &amp; Claude Vision OCR import to replace paper schedules for 20+ lifeguards &amp; 200+ kids.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Common App Entry 2: Brain Navigator & Independent Software Portfolio -->
-          <div class="kit-card">
-            <div class="kit-card-head">
-              <div class="kit-card-title">
-                <span>🕯️ Activity #2: Independent iOS &amp; Full-Stack Software Developer (Brain Navigator)</span>
-              </div>
-              <span class="kit-meta-tag">Computer/Technology · 36 wks/yr · 10 hrs/wk</span>
-            </div>
-            <div class="copy-field-group">
-              <div class="copy-field">
-                <div class="copy-field-top">
-                  <span class="field-label">Position / Leadership (≤50)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="50">37 / 50</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Independent iOS &amp; Full-Stack Developer</div>
-              </div>
-              <div class="copy-field">
-                <div class="copy-field-top">
-                  <span class="field-label">Organization Name (≤100)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="100">68 / 100</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Brain Navigator iOS App &amp; Open-Source Portfolio (peternunley08-ops)</div>
-              </div>
-              <div class="copy-field full">
-                <div class="copy-field-top">
-                  <span class="field-label">Activity Description (≤150)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="150">148 / 150</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Built local-first React Native/TypeScript iOS student app (133 unit tests), SLO Food Bank 5K race portal, and serverless Gemini AI e-commerce tools.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Common App Entry 3: Cal Poly EPIC -->
-          <div class="kit-card">
-            <div class="kit-card-head">
-              <div class="kit-card-title">
-                <span>🤖 Activity #3: Cal Poly EPIC Robotics &amp; Engineering Program</span>
-              </div>
-              <span class="kit-meta-tag">Science/Math · 1 wk/yr · 60 hrs/wk</span>
-            </div>
-            <div class="copy-field-group">
-              <div class="copy-field">
-                <div class="copy-field-top">
-                  <span class="field-label">Position / Leadership (≤50)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="50">20 / 50</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Selected Participant</div>
-              </div>
-              <div class="copy-field">
-                <div class="copy-field-top">
-                  <span class="field-label">Organization Name (≤100)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="100">52 / 100</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Cal Poly Engineering Possibilities in College (EPIC)</div>
-              </div>
-              <div class="copy-field full">
-                <div class="copy-field-top">
-                  <span class="field-label">Activity Description (≤150)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="150">148 / 150</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Completed intensive weeklong residential engineering program with 18 labs; built an autonomous-driving JetBot robot and programmed an Arduino robot.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Common App Entry 4: Swim Program Manager -->
-          <div class="kit-card">
-            <div class="kit-card-head">
-              <div class="kit-card-title">
-                <span>🛟 Activity #4: School District Swim Program Manager &amp; Head Lifeguard</span>
-              </div>
-              <span class="kit-meta-tag">Work (Paid) · 10 wks/yr · 27 hrs/wk</span>
-            </div>
-            <div class="copy-field-group">
-              <div class="copy-field">
-                <div class="copy-field-top">
-                  <span class="field-label">Position / Leadership (≤50)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="50">37 / 50</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Swim Program Manager &amp; Head Lifeguard</div>
-              </div>
-              <div class="copy-field">
-                <div class="copy-field-top">
-                  <span class="field-label">Organization Name (≤100)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="100">42 / 100</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Lucia Mar Unified School District Aquatics</div>
-              </div>
-              <div class="copy-field full">
-                <div class="copy-field-top">
-                  <span class="field-label">Activity Description (≤150)</span>
-                  <div class="field-right">
-                    <span class="char-counter" data-max="150">143 / 150</span>
-                    <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                  </div>
-                </div>
-                <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Used my scheduling app to coordinate 20+ lifeguards/instructors and 200+ students across district swim lessons, diving, and open swim programs.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SECTION B: UC APPLICATION ACTIVITIES (350 CHAR LIMIT) -->
-      <div class="kit-section">
-        <div class="kit-sec-header">
-          <div>
-            <h2>2. UC Application Activities &amp; Awards Entries (≤350 Characters)</h2>
-            <p>Expanded descriptions for the University of California 20-slot application, combining concrete impact with technical depth.</p>
-          </div>
-        </div>
-
-        <div class="kit-grid">
-          <!-- UC Entry 1: DeckHand / Lucia Mar Swim Scheduling App -->
-          <div class="kit-card">
-            <div class="kit-card-head">
-              <div class="kit-card-title">🏊‍♂️ UC Entry #1: Creator &amp; Lead Developer — DeckHand / LMUSD Swim Scheduling App</div>
-              <span class="kit-meta-tag">Extracurricular / Work · ≤350 Chars</span>
-            </div>
-            <div class="copy-field full">
-              <div class="copy-field-top">
-                <span class="field-label">UC Activity Description (≤350)</span>
-                <div class="field-right">
-                  <span class="char-counter" data-max="350">344 / 350</span>
-                  <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                </div>
-              </div>
-              <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Paper schedules kept blowing off our windy pool deck and quiet lifeguards got left off shifts, so I built a full-stack React &amp; Supabase web app (aglifeguard.netlify.app). Engineered 3-way multi-phone sync, Claude Vision photo roster import, and role security to coordinate 20+ lifeguards/instructors and 200+ swimmers all summer.</div>
-            </div>
-          </div>
-
-          <!-- UC Entry 2: Brain Navigator iOS App -->
-          <div class="kit-card">
-            <div class="kit-card-head">
-              <div class="kit-card-title">🕯️ UC Entry #2: Creator — Brain Navigator iOS Student Companion App</div>
-              <span class="kit-meta-tag">Extracurricular · ≤350 Chars</span>
-            </div>
-            <div class="copy-field full">
-              <div class="copy-field-top">
-                <span class="field-label">UC Activity Description (≤350)</span>
-                <div class="field-right">
-                  <span class="char-counter" data-max="350">342 / 350</span>
-                  <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                </div>
-              </div>
-              <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Designed and built a calm, local-first iPhone app in React Native, Expo, and TypeScript to help high schoolers manage classes, GPA, focus sessions, and mental clutter without streak guilt. Engineered across 7 iterative rounds with 133 automated unit tests, procedural Web Audio synthesis, iOS Keychain privacy, and an interactive web demo.</div>
-            </div>
-          </div>
-
-          <!-- UC Entry 3: Community Web Builds & AI Automation -->
-          <div class="kit-card">
-            <div class="kit-card-head">
-              <div class="kit-card-title">⚡ UC Entry #3: Community Web Builds, Serverless AI &amp; E-Commerce Systems</div>
-              <span class="kit-meta-tag">Extracurricular / Community · ≤350 Chars</span>
-            </div>
-            <div class="copy-field full">
-              <div class="copy-field-top">
-                <span class="field-label">UC Activity Description (≤350)</span>
-                <div class="field-right">
-                  <span class="char-counter" data-max="350">346 / 350</span>
-                  <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                </div>
-              </div>
-              <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Built the Donut Dash 5K race website &amp; interactive Leaflet route map benefiting the SLO Food Bank; engineered Northstar Paws (serverless Google Apps Script + Gemini Vision AI pet portrait pipeline); created a 100% client-side Chase/PayPal CSV Money Dashboard; and coded a 17-section WCAG AA Shopify Liquid theme and 6-agent Python pipeline.</div>
-            </div>
-          </div>
-
-          <!-- UC Entry 4: Cal Poly EPIC -->
-          <div class="kit-card">
-            <div class="kit-card-head">
-              <div class="kit-card-title">🤖 UC Entry #4: Cal Poly EPIC (Engineering Possibilities in College)</div>
-              <span class="kit-meta-tag">Educational Preparation Program · ≤350 Chars</span>
-            </div>
-            <div class="copy-field full">
-              <div class="copy-field-top">
-                <span class="field-label">UC Program Description (≤350)</span>
-                <div class="field-right">
-                  <span class="char-counter" data-max="350">333 / 350</span>
-                  <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy</button>
-                </div>
-              </div>
-              <div class="copy-text" contenteditable="true" oninput="updateCounter(this)">Selected for Cal Poly SLO's intensive 60-hour residential engineering program completing 18 hands-on university labs. Assembled and programmed an autonomous NVIDIA JetBot and Arduino robot, calibrating computer vision, ultrasonic obstacle avoidance, and mechanical error margins for the autonomous Stop-Sign navigation challenge.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SECTION C: ADDITIONAL INFORMATION TECHNICAL PORTFOLIO BLOCK -->
-      <div class="kit-section">
-        <div class="kit-sec-header">
-          <div>
-            <h2>3. Common App &amp; UC "Additional Information" Technical Portfolio Block</h2>
-            <p>Copy and paste this concise, admissions-friendly summary into the Additional Information section so readers can inspect live demos and automated tests in one click.</p>
-          </div>
-        </div>
-
-        <div class="kit-card">
-          <div class="kit-card-head">
-            <div class="kit-card-title">🔗 Software &amp; Product Engineering Portfolio Summary (Plain Text for Common App / UC)</div>
-            <span class="kit-meta-tag">Verified Live URLs · Concise &amp; Skimmable</span>
-          </div>
-          <div class="copy-field full">
-            <div class="copy-field-top">
-              <span class="field-label">Additional Information Block (Copy &amp; Paste Ready)</span>
-              <div class="field-right">
-                <span class="char-counter" data-max="2500">1295 / 2500</span>
-                <button type="button" class="copy-btn" onclick="copyField(this)">📋 Copy Block</button>
-              </div>
-            </div>
-            <div class="copy-text mono" contenteditable="true" oninput="updateCounter(this)">SOFTWARE &amp; ENGINEERING PORTFOLIO (LIVE INTERACTIVE DEMOS &amp; SOURCE)
-Live Portfolio Hub: https://peternunley08-ops.github.io/peternunley08-ops/
-GitHub Profile: https://github.com/peternunley08-ops
-
-1. Brain Navigator (iOS Student Companion App — React Native, Expo, TypeScript, Supabase)
-• Calm, local-first iPhone app helping students track classes, GPA, focus sessions, and mental clutter without streak pressure. Built across 7 rounds with 133 automated unit tests across 38 suites.
-• Interactive iPhone Simulator: https://peternunley08-ops.github.io/peternunley08-ops/brain-navigator-demo/
-• Source &amp; CI Tests: https://github.com/peternunley08-ops/brain-navigator
-
-2. DeckHand / LMUSD Swim Roster &amp; Lifeguard Sync (React 18, Vite, Supabase RLS, Claude Vision)
-• Real-time aquatics scheduling &amp; attendance web app built for our school district pool (20+ lifeguards/instructors, 200+ swimmers). Features a 3-way ETag optimistic concurrency merge engine so multiple poolside phones never overwrite each other, plus AI photo roster import.
-• Live App Demo: https://peternunley08-ops.github.io/swim-roster-ops/app/
-• Source &amp; Sync Tests: https://github.com/peternunley08-ops/swim-roster-ops
-
-3. Community Web Builds, Serverless AI &amp; Dashboards (Leaflet.js, Google Apps Script, Gemini API)
-• Donut Dash 5K (SLO Food Bank Fundraiser &amp; Interactive Course Map): https://peternunley08-ops.github.io/web-builds-and-dashboards/donut-dash/
-• Northstar Paws (Serverless Drive/Sheets/Gemini AI Pet Portrait Storefront): https://peternunley08-ops.github.io/web-builds-and-dashboards/northstar-paws/
-• Money Dashboard (100% Client-Side Chase/PayPal CSV Budget Analyzer): https://peternunley08-ops.github.io/web-builds-and-dashboards/money-dashboard/?demo=1</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <script>
-    function switchTab(tabName) {
-      var isResume = tabName === 'resume';
-      document.getElementById('tab-resume').classList.toggle('active', isResume);
-      document.getElementById('tab-kit').classList.toggle('active', !isResume);
-      document.getElementById('btn-tab-resume').classList.toggle('active', isResume);
-      document.getElementById('btn-tab-kit').classList.toggle('active', !isResume);
-      document.getElementById('btn-tab-resume').setAttribute('aria-selected', isResume ? 'true' : 'false');
-      document.getElementById('btn-tab-kit').setAttribute('aria-selected', !isResume ? 'true' : 'false');
-    }
-
     function printResume() {
-      switchTab('resume');
       window.print();
     }
-
-    function updateCounter(el) {
-      var field = el.closest('.copy-field');
-      if (!field) return;
-      var counter = field.querySelector('.char-counter');
-      if (!counter) return;
-      var max = parseInt(counter.getAttribute('data-max') || '150', 10);
-      var text = (el.innerText || el.textContent || '').replace(/\r\n/g, '\n').trim();
-      var len = text.length;
-      counter.textContent = len + ' / ' + max + ' chars';
-      counter.classList.toggle('over', len > max);
-    }
-
-    function copyField(btn) {
-      var field = btn.closest('.copy-field');
-      if (!field) return;
-      var textEl = field.querySelector('.copy-text');
-      if (!textEl) return;
-      var text = (textEl.innerText || textEl.textContent || '').trim();
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function () {
-          showCopied(btn);
-        });
-      } else {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        showCopied(btn);
-      }
-    }
-
-    function showCopied(btn) {
-      var orig = btn.getAttribute('data-orig') || btn.textContent;
-      btn.setAttribute('data-orig', orig);
-      btn.textContent = '✓ Copied!';
-      btn.classList.add('copied');
-      setTimeout(function () {
-        btn.textContent = orig;
-        btn.classList.remove('copied');
-      }, 1600);
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      var fields = document.querySelectorAll('.copy-text');
-      for (var i = 0; i < fields.length; i++) {
-        updateCounter(fields[i]);
-      }
-      if (window.location.hash === '#kit') {
-        switchTab('kit');
-      }
-    });
   </script>
 </body>
 </html>

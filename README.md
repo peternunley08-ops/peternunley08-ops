@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/peternunley08-ops/peternunley08-ops/actions/workflows/ci.yml/badge.svg)](https://github.com/peternunley08-ops/peternunley08-ops/actions/workflows/ci.yml)
 [![Portfolio Website](https://img.shields.io/badge/🌐_Live_Portfolio-peternunley08--ops.github.io-2DD4BF?style=for-the-badge)](https://peternunley08-ops.github.io/peternunley08-ops/)
-[![Engineering Resume & College Kit](https://img.shields.io/badge/📄_1--Page_Resume-Print_&_College_Kit-f59e0b?style=for-the-badge)](https://peternunley08-ops.github.io/peternunley08-ops/resume.html)
+[![1-Page Engineering Resume](https://img.shields.io/badge/📄_1--Page_Resume-Print_Ready-f59e0b?style=for-the-badge)](https://peternunley08-ops.github.io/peternunley08-ops/resume.html)
 
 I build calm, practical software for real-world operations, students, and local communities — ranging from native iOS apps and multi-device sync engines to multi-agent pipelines, e-commerce design systems, and interactive dashboards.
 
