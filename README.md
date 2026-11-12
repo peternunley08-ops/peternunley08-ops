@@ -60,3 +60,13 @@ A real-time roster, attendance, instructor assignment, and rotation platform bui
 - **[🐾 Northstar Paws](https://peternunley08-ops.github.io/web-builds-and-dashboards/northstar-paws/):** Custom pet-portrait storefront with an interactive **AI Portrait Studio** and a 24/7 **Google Apps Script + Gemini Vision** automated proof pipeline.
 - **[💳 Money Dashboard](https://peternunley08-ops.github.io/web-builds-and-dashboards/money-dashboard/?demo=1):** 100% client-side Chase & PayPal CSV budget analyzer pre-loaded with 3 months of synthetic demo data, SVG spending donuts, and editable monthly budgets.
 - **[🎛️ Command Center UI](https://peternunley08-ops.github.io/web-builds-and-dashboards/command-center-ui/):** Dark-mode operations cockpit with persistent daily priority rings and a built-in 25m Quick-Focus timer.
+
+---
+
+### 6. [🤽 PoloBridge & PoloPad Pro](https://github.com/peternunley08-ops/polobridge) — *Open-Source Water Polo Scoreboard Bridge & Game Desk*
+[![Live Web App](https://img.shields.io/badge/🤽_live_app-PoloPad_Pro_console-0ea5e9)](https://peternunley08-ops.github.io/polobridge/) [![Repository](https://img.shields.io/badge/📦_repo-firmware_%26_hardware-2DD4BF)](https://github.com/peternunley08-ops/polobridge)
+> **Stack:** React 18 · TypeScript · Vite · Tailwind CSS · Web Bluetooth · WebSerial · ESP32-S3 (C++/Arduino) · Cloudflare Workers · Durable Objects
+
+- **[PoloPad Pro Scoring Console](https://peternunley08-ops.github.io/polobridge/):** Tablet and phone scoring table with game and shot clocks in tenths of a second, World Aquatics WP 20.15 shot-clock blanking, exclusion release on a goal, three-foul cap-out, NFHS 30-second mode, offline match persistence, and a digital scoresheet with print and CSV export.
+- **PoloBridge Dongle:** ESP32-S3 Bluetooth bridge design that connects the console to **Colorado Time Systems** and **Daktronics** pool scoreboards over 2.5 kV isolated RS-232. The repository includes firmware, PCB manufacturing files (Gerbers, BOM, pick-and-place) and 3D-printable enclosure parts.
+- **In review:** A Tournament Director dashboard for four pool courses on one screen, with a Cloudflare Workers + Durable Objects relay and an automated test suite ([pull request #1](https://github.com/peternunley08-ops/polobridge/pull/1)). Not yet in the live demo.
