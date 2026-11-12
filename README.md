@@ -10,7 +10,27 @@ I build calm, practical software for real-world operations, students, and local 
 
 ## 🚀 Featured Repositories & Live Demos
 
-### 1. [🕯️ Brain Navigator](https://github.com/peternunley08-ops/brain-navigator) — *iOS Student Companion App*
+### 1. [PoloBridge & PoloPad Pro](https://github.com/peternunley08-ops/polobridge) — *Water Polo Timing & Scoreboard Bridge*
+
+[Open the live console](https://peternunley08-ops.github.io/polobridge/) · [Source and hardware designs](https://github.com/peternunley08-ops/polobridge)
+
+Water polo timing software paired with an ESP32 Bluetooth-to-RS-232 scoreboard bridge. The project includes a React web console, native SwiftUI iPad app, firmware, and hardware design files.
+
+> **Stack:** React · TypeScript · SwiftUI · ESP32 · Bluetooth LE · RS-232
+
+---
+
+### 2. [The Daily Nun](https://github.com/peternunley08-ops/the-daily-nun) — *Independent Publication & Social Content*
+
+[Read the newspaper](https://peternunley08-ops.github.io/the-daily-nun/) · [Explore the Instagram Stories](https://peternunley08-ops.github.io/the-daily-nun/stories-current-media/) · [Source](https://github.com/peternunley08-ops/the-daily-nun)
+
+A developing publication about government, media, culture, and questions worth following. Includes a newspaper front page, an opening article, sourced Instagram Stories and carousels, and short text Reels.
+
+> **Stack:** HTML · CSS · JavaScript · Canvas API · Node.js
+
+---
+
+### 3. [🕯️ Brain Navigator](https://github.com/peternunley08-ops/brain-navigator) — *iOS Student Companion App*
 [![CI](https://github.com/peternunley08-ops/brain-navigator/actions/workflows/ci.yml/badge.svg)](https://github.com/peternunley08-ops/brain-navigator/actions/workflows/ci.yml) [![Tests](https://img.shields.io/badge/tests-133_passed-f59e0b)](https://github.com/peternunley08-ops/brain-navigator/tree/main/tests) [![Interactive iPhone Simulator](https://img.shields.io/badge/🕯️_live_demo-interactive_iPhone_simulator-E8A855)](https://peternunley08-ops.github.io/peternunley08-ops/brain-navigator-demo/)
 > **Stack:** React Native 0.86 · Expo SDK 57 · TypeScript · Zustand · Reanimated 4 · Supabase Edge Functions · Swift Widgets
 
@@ -23,7 +43,7 @@ A quiet, local-first iPhone app designed for high school students to keep classe
 
 ---
 
-### 2. [🏊‍♂️ DeckHand — Swim Roster & Lifeguard Sync](https://github.com/peternunley08-ops/swim-roster-ops) — *Multi-Device Aquatics Operations*
+### 4. [🏊‍♂️ DeckHand — Swim Roster & Lifeguard Sync](https://github.com/peternunley08-ops/swim-roster-ops) — *Multi-Device Aquatics Operations*
 [![CI](https://github.com/peternunley08-ops/swim-roster-ops/actions/workflows/ci.yml/badge.svg)](https://github.com/peternunley08-ops/swim-roster-ops/actions/workflows/ci.yml) [![Tests](https://img.shields.io/badge/tests-13_passed-2DD4BF)](https://github.com/peternunley08-ops/swim-roster-ops/blob/main/src/sync.test.mjs) [![Launch Live App](https://img.shields.io/badge/🚀_live_app-playable_demo-2DD4BF)](https://peternunley08-ops.github.io/swim-roster-ops/app/) [![Product Page](https://img.shields.io/badge/landing-product_page-E8A23C)](https://peternunley08-ops.github.io/swim-roster-ops/docs/swim-ops-landing.html)
 > **Stack:** React 18 · Vite · Netlify Functions & Blobs · Supabase (RLS + Edge Functions) · Claude Vision API
 
@@ -33,7 +53,7 @@ A real-time roster, attendance, instructor assignment, and rotation platform bui
 
 ---
 
-### 3. [🪺 AI Systems & Agency OS](https://github.com/peternunley08-ops/ai-systems-and-agency-os) — *Multi-Agent Pipelines & Portfolio Cockpit*
+### 5. [🪺 AI Systems & Agency OS](https://github.com/peternunley08-ops/ai-systems-and-agency-os) — *Multi-Agent Pipelines & Portfolio Cockpit*
 [![CI](https://github.com/peternunley08-ops/ai-systems-and-agency-os/actions/workflows/ci.yml/badge.svg)](https://github.com/peternunley08-ops/ai-systems-and-agency-os/actions/workflows/ci.yml) [![Live Hub](https://img.shields.io/badge/🚀_live_hub-3_interactive_systems-a78bfa)](https://peternunley08-ops.github.io/ai-systems-and-agency-os/)
 > **Stack:** Node.js (Zero-Dependency CLI & Server) · Python 3.12 · Pydantic · Anthropic Claude API · Stripe & Shopify APIs · Google Places API
 
@@ -43,7 +63,7 @@ A real-time roster, attendance, instructor assignment, and rotation platform bui
 
 ---
 
-### 4. [✨ E-Commerce Brand Systems & Shopify OS 2.0](https://github.com/peternunley08-ops/ecommerce-brand-systems) — *LUMÉRA Halo & 4 DTC Brands*
+### 6. [✨ E-Commerce Brand Systems & Shopify OS 2.0](https://github.com/peternunley08-ops/ecommerce-brand-systems) — *LUMÉRA Halo & 4 DTC Brands*
 [![CI](https://github.com/peternunley08-ops/ecommerce-brand-systems/actions/workflows/ci.yml/badge.svg)](https://github.com/peternunley08-ops/ecommerce-brand-systems/actions/workflows/ci.yml) [![Live Storefronts](https://img.shields.io/badge/🛍️_live_hub-5_storefronts_+_CRO_simulator-f59e0b)](https://peternunley08-ops.github.io/ecommerce-brand-systems/)
 > **Stack:** Shopify Online Store 2.0 Liquid (17 Editable Sections) · HTML5/CSS3 Design Systems · WCAG 2.1 AA · Unit-Economics Modeling
 
@@ -52,7 +72,7 @@ A real-time roster, attendance, instructor assignment, and rotation platform bui
 
 ---
 
-### 5. [⚡ Web Builds, Automations & Dashboards](https://github.com/peternunley08-ops/web-builds-and-dashboards) — *Community Sites & Tools*
+### 7. [⚡ Web Builds, Automations & Dashboards](https://github.com/peternunley08-ops/web-builds-and-dashboards) — *Community Sites & Tools*
 [![CI](https://github.com/peternunley08-ops/web-builds-and-dashboards/actions/workflows/ci.yml/badge.svg)](https://github.com/peternunley08-ops/web-builds-and-dashboards/actions/workflows/ci.yml)
 > **Stack:** HTML5 / CSS3 / Vanilla JS · Leaflet.js · Google Apps Script · Gemini Vision API
 

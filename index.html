@@ -248,6 +248,17 @@
     .card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
     .project-card h3 { font-family: 'Fraunces', serif; font-size: 22px; margin: 10px 0 8px; }
     .project-card p { color: var(--muted); font-size: 14.5px; margin-bottom: 20px; flex: 1; }
+    .flagship, .flagship-top > *, .project-card { min-width: 0; }
+    .preview-box pre { overflow-wrap: anywhere; }
+    @media (max-width: 760px) {
+      .bullets li { display: block; overflow-wrap: anywhere; }
+      .bullets li::before { margin-right: 8px; }
+      .dh-head, .dh-row, .screens-label { flex-wrap: wrap; gap: 8px; }
+    }
+    @media (max-width: 1100px) {
+      .nav-inner { height: auto; min-height: 68px; flex-wrap: wrap; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
+      .nav-links { flex-wrap: wrap; gap: 12px 18px; }
+    }
 
     /* Lightbox modal */
     .lightbox {
@@ -278,6 +289,7 @@
         <span>Peter Nunley</span>
       </a>
       <nav class="nav-links">
+        <a href="#featured">Featured</a>
         <a href="#flagships">Flagships</a>
         <a href="#ai-ecommerce">AI &amp; Commerce</a>
         <a href="#web-builds">Web &amp; Dashboards</a>
@@ -298,6 +310,54 @@
         <a href="#flagships" class="btn primary">Explore Live Demos ↓</a>
         <a href="resume.html" class="btn">📄 1-Page Engineering Resume →</a>
         <a href="https://github.com/peternunley08-ops" target="_blank" rel="noopener" class="btn">github.com/peternunley08-ops ↗</a>
+      </div>
+    </section>
+
+    <section id="featured">
+      <div class="sec-head">
+        <div>
+          <h2>Featured Projects</h2>
+          <p>Recent work in poolside operations and independent publishing.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <article class="project-card">
+          <div class="card-thumb">
+            <img class="cover" src="https://raw.githubusercontent.com/peternunley08-ops/polobridge/main/assets/polobridge_hardware_dongle.jpg" alt="PoloBridge hardware dongle project render" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="badge-row">
+              <span class="tag teal">Water Polo</span>
+              <span class="tag">React &amp; SwiftUI</span>
+              <span class="tag">ESP32 &amp; Bluetooth LE</span>
+            </div>
+            <h3>PoloBridge &amp; PoloPad Pro</h3>
+            <p>Water polo timing software paired with a Bluetooth-to-RS-232 scoreboard bridge. Includes a web console, native iPad app, firmware, and hardware design files.</p>
+            <div class="card-actions">
+              <a href="https://peternunley08-ops.github.io/polobridge/" class="btn primary">Open Live Console</a>
+              <a href="https://github.com/peternunley08-ops/polobridge" target="_blank" rel="noopener" class="btn">GitHub Repository</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="card-thumb" style="background:#2448b5">
+            <img src="assets/daily-nun-profile.png" alt="The Daily Nun masthead" loading="lazy" style="width:175px;height:175px;object-fit:contain" />
+          </div>
+          <div class="card-body">
+            <div class="badge-row">
+              <span class="tag warm">Independent Publishing</span>
+              <span class="tag">HTML &amp; Canvas</span>
+              <span class="tag">Sourced Social Content</span>
+            </div>
+            <h3>The Daily Nun</h3>
+            <p>A developing publication about government, media, culture, and questions worth following. Newspaper layouts, an opening article, and sourced Instagram Stories, carousels, and short text Reels.</p>
+            <div class="card-actions">
+              <a href="https://peternunley08-ops.github.io/the-daily-nun/" class="btn primary">Read the Newspaper</a>
+              <a href="https://peternunley08-ops.github.io/the-daily-nun/stories-current-media/" class="btn">View Instagram Stories</a>
+              <a href="https://github.com/peternunley08-ops/the-daily-nun" target="_blank" rel="noopener" class="btn">GitHub Repository</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
